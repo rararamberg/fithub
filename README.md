@@ -201,7 +201,7 @@ src
 #### ERD Model
 
 
-![ERD Snapshot](https://i.imgur.com/10JYikO.png)
+![ERD Snapshot](https://i.imgur.com/ns47Jwr.png)
 
 <br>
 
