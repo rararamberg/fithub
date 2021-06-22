@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one :studio
   # ensure provided password, hash set to digest
   has_secure_password
 
