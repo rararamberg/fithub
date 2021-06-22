@@ -59,6 +59,7 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 #### Wireframes
 
 [FIGMA LAYOUT](https://www.figma.com/file/SLFZ8RQBUOnM8y3KTbYR0Z/Fitness-App?node-id=0%3A1)
+<br>
 
 
 ![Desktop Landing](https://i.imgur.com/BwoqpM9.png)
@@ -89,10 +90,16 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 
 - Class Create
 
-![Mobile 1](https://imgur.com/nLQ8tWJ)
-![Mobile 2](https://imgur.com/svYnXd3)
+![Mobile 1](https://i.imgur.com/nLQ8tWJ.png)
+<br>
+
+![Mobile 2](https://i.imgur.com/svYnXd3.png)
+<br>
+
 ![Mobile 3](https://i.imgur.com/QyCJYyh.png)
+<br>
 ![Mobile 4](https://i.imgur.com/SYR1KLm.png)
+<br>
 
 - Mobile Snapshots
 
@@ -153,8 +160,6 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
-
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
 | Backend Structure   |    H     |     2 hrs      |     X hrs     |    3 hrs    |
@@ -190,7 +195,6 @@ src
 | PMVP Frontend       |    L     |     3 hrs      |     X hrs     |     TBD     |
 | TOTAL               |          |     66 hrs     |     X hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -198,8 +202,11 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+
 ![ERD Snapshot](https://i.imgur.com/10JYikO.png)
+
+<br>
+
 [ERD Sample](https://drive.google.com/file/d/1XPkC2ooG3LgHRNegw8WzGaFXVdVNWkfY/view?usp=sharing)
 <br>
 
@@ -211,8 +218,10 @@ src
 - _Include second table user account for clients_
 - _Clients' booked classes and Joined studios get added to their profile_
 - _UX Design shows non-users when updates to profiles and class been made through styling and text_
-- _Track Attendance Rate with visual graph_
+- _Track Attendance Rate with visual graph over various weekly, monthly, quarterly time periods_
+- _Track Membership Rate with visual graph over various weekly, monthly, quarterly time periods_
 - _Include Employee table for admin to assign instructor to classes_
+
 
 
 ***
