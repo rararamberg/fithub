@@ -58,7 +58,7 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 
 #### Wireframes
 
-[FIGMA LAYOUT](https://www.figma.com/file/SLFZ8RQBUOnM8y3KTbYR0Z/Fitness-App?node-id=0%3A1)
+[FULL FIGMA DIRECTIONAL LAYOUT](https://www.figma.com/file/SLFZ8RQBUOnM8y3KTbYR0Z/Fitness-App?node-id=0%3A1)
 <br>
 
 
