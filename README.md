@@ -50,6 +50,7 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 | Axios            | _Promise based HTTP client for browser._            |
 | Rack Cors        | _Rack Middleware for Cross Origin Resource sharing._|
 | Bcrypt           | _Ruby binding for password hashing algorithm._      |
+| Unsplash         | _Free high quality and resolution images._          |
 
 
 <br>
