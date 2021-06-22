@@ -91,13 +91,10 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 - Class Create
 
 ![Mobile 1](https://i.imgur.com/nLQ8tWJ.png)
-<br>
-
 ![Mobile 2](https://i.imgur.com/svYnXd3.png)
 <br>
 
 ![Mobile 3](https://i.imgur.com/QyCJYyh.png)
-<br>
 ![Mobile 4](https://i.imgur.com/SYR1KLm.png)
 <br>
 
