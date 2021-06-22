@@ -19,7 +19,7 @@
 
 ## Overview
 
-_**FitHub** is a full-stack application where studio and gym owners can add their business to a collective online platform where clients can check out their classes. Owners are able to create their profile, add their classes, and make updates or delete as needed to their weekly schedule._
+_**FitHub** is a full-stack application where studio and gym owners can add their business to a collective online platform where clients can check out their classes. Owners are able to create their profile, add their classes, and make updates or delete as needed to their weekly schedule. Application is created with Ruby on Rails and React._
 
 
 <br>
@@ -43,11 +43,14 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 ### Libraries and Dependencies
 
 
-|     Library      | Description                                |
-| :--------------: | :----------------------------------------- |
-| React Bootstrap  | _Made for cards and links._                |
-|                  |                                            |
-|                  |                                            |
+|     Library      | Description                                         |
+| :--------------: | :---------------------------------------------------|
+| React Bootstrap  | _Made for cards,links, advanced CSS._               |
+| React Router     | _Navigational components._                          |
+| Axios            | _Promise based HTTP client for browser._            |
+| Rack Cors        | _Rack Middleware for Cross Origin Resource sharing._|
+| Bcrypt           | _Ruby binding for password hashing algorithm._      |
+
 
 <br>
 
@@ -55,30 +58,43 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 
 #### Wireframes
 
+[FIGMA LAYOUT](https://www.figma.com/file/SLFZ8RQBUOnM8y3KTbYR0Z/Fitness-App?node-id=0%3A1)
 
-![Desktop Landing](url)
+
+![Desktop Landing](https://i.imgur.com/BwoqpM9.png)
 
 - Desktop Landing
 
-![Dummy Link](url)
+![Desktop Studios](https://i.imgur.com/VlqoO5v.png)
 
-- Desktop Hero
+- Desktop Studios
 
-![Dummy Link](url)
+![Login ](https://i.imgur.com/NIBSZk6.png)
 
-- Resource Index
+- Login
 
-![Dummy Link](url)
+![Register](https://i.imgur.com/xb9R6Or.png)
 
-- Resource Show
+- Register
 
-![Dummy Link](url)
+![Studio Detail ](https://i.imgur.com/m08BYdx.png)
 
-- Tablet Resource Index
+- Studio Detail
 
-![Dummy Link](url)
+![Class Update](https://i.imgur.com/I3N5Yyq.png)
 
-- Mobile Resource Index
+- Class Update
+
+![Class Create](https://i.imgur.com/jJndiJj.png)
+
+- Class Create
+
+![Mobile 1](https://imgur.com/nLQ8tWJ)
+![Mobile 2](https://imgur.com/svYnXd3)
+![Mobile 3](https://i.imgur.com/QyCJYyh.png)
+![Mobile 4](https://i.imgur.com/SYR1KLm.png)
+
+- Mobile Snapshots
 
 #### Component Tree
 
