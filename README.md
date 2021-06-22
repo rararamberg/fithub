@@ -23,7 +23,7 @@
 
 ## Overview
 
-_**FitHub** is a full-stack application where studio and gym owners can add their business to a collective online platform where clients can check out their classes. Owners are able to create their profile, add their classes, and make updates or delete as needed to their class schedule._
+_**FitHub** is a full-stack application where studio and gym owners can add their business to a collective online platform where clients can check out their classes. Owners are able to create their profile, add their classes, and make updates or delete as needed to their weekly schedule._
 
 
 <br>
@@ -52,8 +52,6 @@ _The **FitHub** MVP is to ensure that the studio or gym owner is able build out 
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
 | React Bootstrap  | _Made for cards and links._                |
 |     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
 |  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
@@ -157,9 +155,8 @@ src
 - _Include second table user account for clients_
 - _Clients' booked classes and Joined studios get added to their profile_
 - _Track Attendance Rate with visual graph_
-- _CRUD access and functionality to class schedule_
-- _Non-Users can view studio profiles and class schedules_
-- - _UX Design shows non-users when updates to profiles and class been made through styling and text_
+- - _Include Employee table for admin to assign instructor to classes_
+- _UX Design shows non-users when updates to profiles and class been made through styling and text_
 
 ***
 
