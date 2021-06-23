@@ -5,10 +5,11 @@ class FitClassesController < ApplicationController
   # POST /fit_classes
   def create
     @fit_class = FitClass.new(fit_class_params)
+    # assign association of classes belonging to studio of current user
     @fit_class.studio = @current_user.studio
 
     if @fit_class.save
-      render json: @fit_class, status: :created, location: @fit_class
+      render json: @fit_class, status: :created
     else
       render json: @fit_class.errors, status: :unprocessable_entity
     end
@@ -36,6 +37,6 @@ class FitClassesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fit_class_params
-      params.require(:fit_class).permit(:class_name, :schedule_time, :studio_id)
+      params.require(:fit_class).permit(:class_name, :schedule_time)
     end
 end

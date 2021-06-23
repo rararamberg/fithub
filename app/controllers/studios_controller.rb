@@ -14,12 +14,14 @@ class StudiosController < ApplicationController
     render json: @studio, include: :fit_classes
   end
 
-  # does studios need to be nested in user
+
   # POST /studios
   def create
     @studio = Studio.new(studio_params)
-    # assign association
+
+    # assign association to the current_user
     @studio.user = @current_user
+
     if @studio.save
       render json: @studio, status: :created
     else
@@ -36,6 +38,7 @@ class StudiosController < ApplicationController
     end
   end
 
+  # custom  method to retrieve user's studio and the studio's classes
   def user_studio 
     render json: @current_user.studio, include: :fit_classes
   end

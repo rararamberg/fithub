@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
+  # === custom routes === #
   # direct to authentication controller methods
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
-
-  # nested routes
-  # https://git.generalassemb.ly/sei-nyc-loon/rails-controllers-lesson/blob/master/nestedAssociations.md
+  # route to show only studio that belong to user
   get '/users/studios', to: 'studios#user_studio'
   
 
-  # will I need to nest these resources??
   resources :studios
   resources :fit_classes, only: [:create, :update, :destroy]
   
