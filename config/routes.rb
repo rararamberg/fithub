@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # direct to authentication method
+  post '/auth/login', to: 'authentication#login'
+  get '/auth/verify', to: 'authentication#verify'
+  # will I need to nest these resources??
   resources :fit_classes
   resources :studios
   resources :users

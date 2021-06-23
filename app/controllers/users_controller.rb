@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-
+  before_action :authorize_request, except: :create
   # GET /users
   def index
     @users = User.all
@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @token = encode({id: @user.id})
+      @token = encode({ id: @user.id })
       render json: {
         # remove digest from being sent to front-end
-        user: @user.attributes.except("password_digest"),
+        user: @user.attributes.except('password_digest'),
         token: @token
         }, status: :created
     else

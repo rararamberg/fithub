@@ -1,5 +1,10 @@
 class User < ApplicationRecord
+  # === associations ===
   has_one :studio
+
+  has_and_belongs_to_many :fit_classes
+
+  # === authentication and validations ===
   # ensure provided password, hash set to digest
   has_secure_password
 
