@@ -1,6 +1,6 @@
 class AuthenticationController < ApplicationController
-  # authorize_request passed down from application_controller
-  before_action :authorize_request, except: :login
+  # authorize_request passed down from application_controllerrails 
+  before_action :authorize_request, only: :verify
 
   # POST /auth/login
   def login

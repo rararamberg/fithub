@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      @token = encode({ id: @user.id })
+      @token = encode({ id: @user.id   })
       render json: {
         # remove digest from being sent to front-end
         user: @user.attributes.except('password_digest'),
