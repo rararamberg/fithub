@@ -1,8 +1,8 @@
 class StudiosController < ApplicationController
-  before_action :set_studio, only: [:show, :update]
-  before_action :authorize_request, only: [:create, :update]
+  before_action :set_studio, only: :show
+  before_action :authorize_request, only: [:create, :update, :user_studio]
 
-  
+
   # GET /studios
   def index
     @studios = Studio.all
@@ -11,29 +11,35 @@ class StudiosController < ApplicationController
 
   # GET /studios/1
   def show
-    render json: @studio
+    render json: @studio, include: :fit_classes
   end
 
   # does studios need to be nested in user
-  # POST /users/:user_id/studios
+  # POST /studios
   def create
     @studio = Studio.new(studio_params)
-
+    # assign association
+    @studio.user = @current_user
     if @studio.save
-      render json: @studio, status: :created, location: @studio
+      render json: @studio, status: :created
     else
       render json: @studio.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /users/:user_id/studios/1
+  # PATCH/PUT /studios/1
   def update
-    if @studio.update(studio_params)
+    if @current_user.studio.update(studio_params)
       render json: @studio
     else
       render json: @studio.errors, status: :unprocessable_entity
     end
   end
+
+  def user_studio 
+    render json: @current_user.studio, include: :fit_classes
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -43,6 +49,6 @@ class StudiosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def studio_params
-      params.require(:studio).permit(:business_name, :location, :blurb, :format, :image_url, :user_id)
+      params.require(:studio).permit(:business_name, :location, :blurb, :format, :image_url)
     end
 end

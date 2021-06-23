@@ -1,22 +1,11 @@
 class FitClassesController < ApplicationController
-  before_action :set_fit_class, only: [:show, :update, :destroy]
+  before_action :set_fit_class, only: [ :update, :destroy]
   before_action :authorize_request, only: [:create, :update, :destroy]
 
-  # GET /studios/1/fit_classes
-  def index
-    @studio = Studio.find(params[:studio_id])
-    @fit_classes = FitClass.where(studio_id: @studio.id)
-    render json: @fit_classes, include: :studio, status: :ok
-  end
-
-  # GET /studios/1/fit_classes/1
-  def show
-    render json: @fit_class
-  end
-
-  # POST /studios/1/fit_classes
+  # POST /fit_classes
   def create
     @fit_class = FitClass.new(fit_class_params)
+    @fit_class.studio = @current_user.studio
 
     if @fit_class.save
       render json: @fit_class, status: :created, location: @fit_class
@@ -25,7 +14,7 @@ class FitClassesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /studios/1/fit_classes/1
+  # PATCH/PUT /fit_classes/1
   def update
     if @fit_class.update(fit_class_params)
       render json: @fit_class
@@ -34,7 +23,7 @@ class FitClassesController < ApplicationController
     end
   end
 
-  # DELETE /studios/1/fit_classes/1
+  # DELETE /fit_classes/1
   def destroy
     @fit_class.destroy
   end
