@@ -1,10 +1,11 @@
 class StudiosController < ApplicationController
-  before_action :set_studio, only: [:show, :update, :destroy]
+  before_action :set_studio, only: [:show, :update]
+  before_action :authorize_request, only: [:create, :update]
 
+  
   # GET /studios
   def index
     @studios = Studio.all
-
     render json: @studios
   end
 
@@ -13,7 +14,8 @@ class StudiosController < ApplicationController
     render json: @studio
   end
 
-  # POST /studios
+  # does studios need to be nested in user
+  # POST /users/:user_id/studios
   def create
     @studio = Studio.new(studio_params)
 
@@ -24,18 +26,13 @@ class StudiosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /studios/1
+  # PATCH/PUT /users/:user_id/studios/1
   def update
     if @studio.update(studio_params)
       render json: @studio
     else
       render json: @studio.errors, status: :unprocessable_entity
     end
-  end
-
-  # DELETE /studios/1
-  def destroy
-    @studio.destroy
   end
 
   private
