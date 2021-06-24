@@ -10,7 +10,7 @@ function Register(props) {
   });
 
   const { username, email, first_name, last_name, password } = formData;
-  // const { handleRegister } = props;
+  const { handleRegister } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,10 +24,10 @@ function Register(props) {
     <div>
       <h2>Create Account</h2>
       <form
-      // onSubmit={(e) => {
-      //   e.preventDefault();
-      //   handleRegister(formData);
-      // }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleRegister(formData);
+        }}
       >
         <label>First Name</label>
         <input
