@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   # custom method to add user to class (PMVP)
+  # PUT /users/1/fit_classes/1
   # def add_class 
   #   @fit_class = FitClass.find(params[:fit_class_id])
   #   @user = User.find(params[:id])
