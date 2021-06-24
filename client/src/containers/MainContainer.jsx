@@ -23,11 +23,11 @@ function MainContainer() {
       <h2>This is main container</h2>
       {/* route to studios screen */}
       <Switch>
-        <Route path="/studios">
-          <Studios studios={studios} />
-        </Route>
         <Route path="/studios/:id">
           <StudioDetail />
+        </Route>
+        <Route path="/studios">
+          <Studios studios={studios} />
         </Route>
       </Switch>
     </div>

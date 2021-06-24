@@ -6,7 +6,7 @@ function Studios(props) {
 
   return (
     <div>
-      <h3>This is studios page</h3>
+      <h3>Studios page</h3>
       {studios.map((studio) => (
         <div className="studio-box" key={studio.id}>
           <div className="studio-image">
