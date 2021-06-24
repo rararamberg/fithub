@@ -16,6 +16,16 @@ class UsersController < ApplicationController
     end
   end
 
+  # custom method to add user to class (PMVP)
+  # def add_class 
+  #   @fit_class = FitClass.find(params[:fit_class_id])
+  #   @user = User.find(params[:id])
+
+  #   @fit_class.user << @user
+  #   @user.fit_classes << @fit_class
+  #   render json: @user, include: :fit_classes
+  # end
+
   private
     # Only allow a list of trusted parameters through.
     def user_params

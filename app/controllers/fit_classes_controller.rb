@@ -29,6 +29,9 @@ class FitClassesController < ApplicationController
     @fit_class.destroy
   end
 
+ 
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_fit_class
