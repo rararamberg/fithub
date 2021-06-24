@@ -12,7 +12,7 @@ function StudioDetail() {
     const fetchStudioItem = async () => {
       const studioData = await getOneStudio(id);
       console.log(studioData);
-      // setStudioItem(studioData)
+      setStudioItem(studioData);
     };
     fetchStudioItem();
   }, [id]);

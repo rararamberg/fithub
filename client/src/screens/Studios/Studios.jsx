@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Studios.css";
 
 function Studios(props) {
   const { studios } = props;
@@ -7,14 +8,18 @@ function Studios(props) {
     <div>
       <h3>This is studios page</h3>
       {studios.map((studio) => (
-        <Link key={studio.id} to={`/studios/${studio.id}`}>
-          <div>
+        <div className="studio-box" key={studio.id}>
+          <div className="studio-image">
             <img src={studio.image_url} alt={studio.business_name} />
-            <h3>{studio.business_name}</h3>
+          </div>
+          <div className="short-studio-info">
+            <Link to={`/studios/${studio.id}`}>
+              <h3>{studio.business_name}</h3>
+            </Link>
             <p>{studio.location} </p>
             <p>{studio.blurb}</p>
           </div>
-        </Link>
+        </div>
       ))}
     </div>
   );
