@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
-import { useHistorty } from "react-router-dom";
-import { getAllStudios } from "../../services/studios";
+import { useParams } from "react-router-dom";
+import { getOneStudio } from "../../services/studios";
 
 function StudioDetail() {
   // set state for studio
+  const [studioItem, setStudioItem] = useState(null);
+  const { id } = useParams();
 
   // function to call single studio
+  useEffect(() => {
+    const fetchStudioItem = async () => {
+      const studioData = await getOneStudio(id);
+      console.log(studioData);
+      // setStudioItem(studioData)
+    };
+    fetchStudioItem();
+  }, [id]);
 
   return (
     <div>

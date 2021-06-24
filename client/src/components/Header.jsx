@@ -6,7 +6,9 @@ function Header(props) {
   return (
     <div>
       <header>
-        <h1>FitHub</h1>
+        <Link to="/">
+          <h1>FitHub</h1>
+        </Link>
         <nav>
           <Link to="/studios">Studios</Link>
           {currentUser ? (

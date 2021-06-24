@@ -53,7 +53,7 @@ function App() {
             <Register handleRegister={handleRegister} />
           </Route>
           <Route>
-            <MainContainer path="/" />
+            <MainContainer exact path="/" />
           </Route>
         </Switch>
       </Layout>
