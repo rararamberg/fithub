@@ -10,6 +10,7 @@ import {
   removeToken,
 } from "./services/auth";
 import Register from "./screens/Register/Register";
+import MainContainer from "./containers/MainContainer";
 
 function App() {
   // objects of data start as null
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register handleRegister={handleRegister} />
+          </Route>
+          <Route>
+            <MainContainer path="/" />
           </Route>
         </Switch>
       </Layout>
