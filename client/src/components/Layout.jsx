@@ -2,10 +2,12 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 function Layout(props) {
+  const { currentUser, handleLogout, children } = props;
+
   return (
     <div>
-      <Header />
-      {props.children}
+      <Header currentUser={currentUser} handleLogout={handleLogout} />
+      {children}
       <Footer />
     </div>
   );
