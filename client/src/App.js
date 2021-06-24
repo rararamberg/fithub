@@ -1,17 +1,44 @@
 import "./App.css";
 import Layout from "./components/Layout";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Login from "./screens/Login/Login";
-import { useState } from "react";
-import { loginUser } from "./services/auth";
+import { useState, useEffect } from "react";
+import {
+  loginUser,
+  registerUser,
+  verifyUser,
+  removeToken,
+} from "./services/auth";
+import Register from "./screens/Register/Register";
 
 function App() {
   // objects of data start as null
   const [currentUser, setCurrentUser] = useState(null);
+  const history = useHistory();
+
+  useEffect(() => {
+    const handleVerify = async () => {
+      const userData = await verifyUser();
+      setCurrentUser(userData);
+    };
+    handleVerify();
+  }, []);
 
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
+    history.push("/");
+  };
+  const handleRegister = async (formData) => {
+    const userData = await registerUser(formData);
+    setCurrentUser(userData);
+    history.push("/");
+  };
+
+  const handleLogout = () => {
+    setCurrentUser(null);
+    localStorage.removeItem("authToken");
+    removeToken();
   };
 
   return (
@@ -20,6 +47,9 @@ function App() {
         <Switch>
           <Route path="/signin">
             <Login handleLogin={handleLogin} />
+          </Route>
+          <Route path="/register">
+            <Register handleRegister={handleRegister} />
           </Route>
         </Switch>
       </Layout>
