@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login() {
+function Login(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
 
   const { username, password } = formData;
+  const { handleLogin } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,10 +17,16 @@ function Login() {
       [name]: value,
     }));
   };
+
   return (
     <div>
       <h2>Welcome</h2>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleLogin(formData);
+        }}
+      >
         <label>Username</label>
         <input
           type="text"
@@ -27,6 +34,7 @@ function Login() {
           value={username}
           onChange={handleChange}
         />
+        <br />
         <label>Password</label>
         <input
           type="password"
@@ -34,6 +42,7 @@ function Login() {
           value={password}
           onChange={handleChange}
         />
+        <br />
         <Link to="/register">need to register?</Link>
         <button>Sign In</button>
       </form>
