@@ -1,12 +1,13 @@
 import { useState } from "react";
 
-function ClassCreate() {
+function ClassCreate(props) {
   const [formData, setFormData] = useState({
     schedule_time: "",
     class_name: "",
   });
 
   const { schedule_time, class_name } = formData;
+  const { handleCreateFitClass } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +20,12 @@ function ClassCreate() {
   return (
     <div>
       <h2>Class Create Page</h2>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleCreateFitClass(formData);
+        }}
+      >
         <input
           type="date"
           name="schedule_time"
