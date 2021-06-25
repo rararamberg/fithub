@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
+import StudioCreateEdit from "../screens/StudioCreateEdit/StudioCreateEdit";
 import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
 import { getAllStudios } from "../services/studios";
@@ -25,6 +26,9 @@ function MainContainer() {
       <Switch>
         <Route path="/studios/:id">
           <StudioDetail />
+        </Route>
+        <Route path="/create-update-studio">
+          <StudioCreateEdit />
         </Route>
         <Route path="/studios">
           <Studios studios={studios} />
