@@ -5,7 +5,7 @@ export const postFitClass = async (fitClassData) => {
   return resp.data;
 };
 
-export const putStudio = async (id, fitClassData) => {
+export const putFitClass = async (id, fitClassData) => {
   const resp = await api.put(`/fit_classes/${id}`, { fit_class: fitClassData });
   return resp.data;
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getOneStudio } from "../../services/studios";
 import "./StudioDetail.css";
+import { Link } from "react-router-dom";
 
 function StudioDetail(props) {
   // set state for studio
@@ -29,6 +30,11 @@ function StudioDetail(props) {
         <h4>
           <em>{studioItem?.location}</em>
         </h4>
+        {currentUser && currentUser.id === studioItem?.user_id ? (
+          <button>Edit Profile</button>
+        ) : (
+          <p>**</p>
+        )}
         <p>{studioItem?.blurb}</p>
         <p>Contact:</p>
         <p>** get studio's owner email **</p>
@@ -46,6 +52,13 @@ function StudioDetail(props) {
             )}
           </div>
         ))}
+        {currentUser && currentUser.id === studioItem?.user_id ? (
+          <Link to="/createclass">
+            <button>Add Class</button>
+          </Link>
+        ) : (
+          <p>**</p>
+        )}
       </div>
     </div>
   );

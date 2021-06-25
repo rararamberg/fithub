@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
+import ClassCreate from "../screens/ClassCreate/ClassCreate";
 import StudioCreateEdit from "../screens/StudioCreateEdit/StudioCreateEdit";
 import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
@@ -8,6 +9,7 @@ import { getAllStudios } from "../services/studios";
 
 function MainContainer(props) {
   const [studios, setStudios] = useState([]);
+  const history = useHistory();
 
   const { currentUser } = props;
 
@@ -35,6 +37,9 @@ function MainContainer(props) {
         </Route> */}
         <Route path="/create-update-studio">
           <StudioCreateEdit />
+        </Route>
+        <Route path="/createclass">
+          <ClassCreate />
         </Route>
         <Route path="/studios">
           <Studios studios={studios} />

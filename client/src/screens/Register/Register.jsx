@@ -35,6 +35,7 @@ function Register(props) {
           name="first_name"
           value={first_name}
           onChange={handleChange}
+          required
         />
         <br />
         <label>Last Name</label>
@@ -43,10 +44,17 @@ function Register(props) {
           name="last_name"
           value={last_name}
           onChange={handleChange}
+          required
         />
         <br />
         <label>Email</label>
-        <input type="text" name="email" value={email} onChange={handleChange} />
+        <input
+          type="text"
+          name="email"
+          value={email}
+          onChange={handleChange}
+          required
+        />
         <br />
         <label>Username</label>
         <input
@@ -54,6 +62,7 @@ function Register(props) {
           name="username"
           value={username}
           onChange={handleChange}
+          required
         />
         <br />
         <label>Password</label>
@@ -62,6 +71,7 @@ function Register(props) {
           name="password"
           value={password}
           onChange={handleChange}
+          required
         />
         <br />
 
