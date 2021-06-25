@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 function ClassEdit(props) {
@@ -6,10 +6,10 @@ function ClassEdit(props) {
     schedule_time: "",
     class_name: "",
   });
-  const { id } = useParams();
+  // const { id } = useParams();
 
-  const { schedule_time, class_name } = formData;
-  const { hahandleUpdateFitClass, handleDeleteFitClass } = props;
+  // const { schedule_time, class_name } = formData;
+  // const { handleUpdateFitClass, handleDeleteFitClass } = props;
 
   // useEffect(() => {
   //   const preFillFormData = () => {
@@ -17,13 +17,13 @@ function ClassEdit(props) {
   //   };
   // });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
   return (
     <div>
       <h2>Switch it up..</h2>

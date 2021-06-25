@@ -9,7 +9,7 @@ function StudioCreateEdit(props) {
     format: "",
   });
 
-  const { business_name, location, blurb, image_url, format } = formData;
+  const { business_name, location, blurb, image_url } = formData;
   const { handleCreateStudio } = props;
 
   const handleChange = (e) => {

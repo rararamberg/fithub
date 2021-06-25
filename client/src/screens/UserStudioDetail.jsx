@@ -4,13 +4,14 @@ import { getUserStudio } from "../services/studios";
 function UserStudioDetail() {
   const [studioItem, setStudioItem] = useState(null);
 
-  useEffect(() => {
-    const fetchUserStudio = async () => {
-      const studioData = await getUserStudio();
-      setStudioItem(studioData);
-      console.log(studioItem);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const fetchUserStudio = async () => {
+  //     const studioData = await getUserStudio();
+  //     setStudioItem(studioData);
+  //     console.log(studioItem);
+  //   };
+  //   fetchUserStudio();
+  // }, []);
   return (
     <div className="studio-detail-container">
       <h2>User Studio Page</h2>
