@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
-import { getUserStudio } from "../services/studios";
+import { getUserStudio } from "../../services/studios";
+import { Link } from "react-router-dom";
 
-function UserStudioDetail() {
-  const [studioItem, setStudioItem] = useState(null);
+function UserStudioDetail(props) {
+  const { studioItem } = props;
 
-  // useEffect(() => {
-  //   const fetchUserStudio = async () => {
-  //     const studioData = await getUserStudio();
-  //     setStudioItem(studioData);
-  //     console.log(studioItem);
-  //   };
-  //   fetchUserStudio();
-  // }, []);
   return (
     <div className="studio-detail-container">
       <h2>User Studio Page</h2>
@@ -32,7 +25,9 @@ function UserStudioDetail() {
           <div className="class-box" key={fitclass.id}>
             <p>**TIME**</p>
             <p>{fitclass.class_name}</p>
-            <button>EDIT</button>
+            <Link>
+              <button>BOOK</button>
+            </Link>
           </div>
         ))}
       </div>
