@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getOneStudio } from "../../services/studios";
+import { useParams, useLocation } from "react-router-dom";
+import { getOneStudio, getUserStudio } from "../../services/studios";
 import "./StudioDetail.css";
 import { Link } from "react-router-dom";
 
@@ -8,18 +8,25 @@ function StudioDetail(props) {
   // set state for studio
   const [studioItem, setStudioItem] = useState(null);
   const { id } = useParams();
-
+  const location = useLocation();
   const { currentUser } = props;
 
   // function to call single studio
   useEffect(() => {
     const fetchStudioItem = async () => {
       const studioData = await getOneStudio(id);
-      console.log(studioData);
       setStudioItem(studioData);
     };
-    fetchStudioItem();
-  }, [id]);
+    const fetchMyStudio = async () => {
+      const studioData = await getUserStudio();
+      setStudioItem(studioData);
+    };
+    if (location.pathname === "/my-studio") {
+      fetchMyStudio();
+    } else {
+      fetchStudioItem();
+    }
+  }, [id, location]);
 
   return (
     <div className="studio-detail-container">
