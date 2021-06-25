@@ -6,14 +6,14 @@ import StudioCreateEdit from "../screens/StudioCreateEdit/StudioCreateEdit";
 import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
 import UserStudioDetail from "../screens/UserStudioDetail";
-import { postFitClass, putFitClass } from "../services/classes";
+import { deleteFitClass, postFitClass, putFitClass } from "../services/classes";
 import { getAllStudios, postStudio, putStudio } from "../services/studios";
 
 function MainContainer(props) {
   const [studios, setStudios] = useState([]);
   // empty array or null for fitclass
-  const [studio, setStudio] = useState(null);
-  const [fitClass, setFitClass] = useState(null);
+  const [fitClasses, setFitClasses] = useState([]);
+  // const [studio, setStudio] = useState(null);
   const history = useHistory();
 
   const { currentUser } = props;
@@ -31,15 +31,15 @@ function MainContainer(props) {
   // function to create studio
   const handleCreateStudio = async (formData) => {
     const studioItem = await postStudio(formData);
-    setStudio((prevState) => [...prevState, studioItem]);
+    setStudios((prevState) => [...prevState, studioItem]);
     // push to user's studio detail page???
-    history.push("/");
+    history.push("/my-studio");
   };
 
   //function to update studio
   const handleUpdateStudio = async (id, formData) => {
     const studioItem = await putStudio(id, formData);
-    setStudio((prevState) =>
+    setStudios((prevState) =>
       prevState.map((studio) => {
         return studio.id === Number(id) ? studioItem : studio;
       })
@@ -49,18 +49,27 @@ function MainContainer(props) {
   //function to create fitclass function
   const handleCreateFitClass = async (formData) => {
     const classItem = await postFitClass(formData);
-    setFitClass((prevState) => [...prevState, classItem]);
+    setFitClasses((prevState) => [...prevState, classItem]);
     // push back to user's studio detail page???
     history.push("/");
   };
 
-  // update class studio
+  // update fitclass
   const handleUpdateFitClass = async (id, formData) => {
     const classItem = await putFitClass(id, formData);
-    setFitClass((prevState) =>
+    setFitClasses((prevState) =>
       prevState.map((fitClass) => {
         return fitClass.id === Number(id) ? classItem : fitClass;
       })
+    );
+  };
+
+  // delete fitclass
+  // do I  need to
+  const handleDeleteFitClass = async (id) => {
+    await deleteFitClass(id);
+    setFitClasses((prevState) =>
+      prevState.filter((fitClass) => fitClass.id !== id)
     );
   };
 
@@ -68,17 +77,16 @@ function MainContainer(props) {
     <div>
       <h2>This is main container</h2>
       {/* <UserStudioDetail /> */}
-      {/* route to studios screen */}
       <Switch>
         <Route path="/studios/:id">
           <StudioDetail currentUser={currentUser} />
         </Route>
         <Route path="/updateclass/:id">
-          <ClassEdit />
+          <ClassEdit
+            handleUpdateFitClass={handleUpdateFitClass}
+            handleDeleteFitClass={handleDeleteFitClass}
+          />
         </Route>
-        {/* <Route path="/users/studios">
-          <UserStudioDetail />
-        </Route> */}
         <Route path="/create-update-studio">
           <StudioCreateEdit handleCreateStudio={handleCreateStudio} />
         </Route>
@@ -87,6 +95,9 @@ function MainContainer(props) {
         </Route>
         <Route path="/studios">
           <Studios studios={studios} />
+        </Route>
+        <Route path="/my-studio">
+          <StudioDetail currentUser={currentUser} />
         </Route>
       </Switch>
     </div>

@@ -29,7 +29,7 @@ function App() {
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
-    history.push("/");
+    history.push("/my-studio");
   };
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
