@@ -12,7 +12,7 @@ import { getAllStudios, postStudio, putStudio } from "../services/studios";
 function MainContainer(props) {
   const [studios, setStudios] = useState([]);
   // empty array or null for fitclass
-  // const [fitClasses, setFitClasses] = useState([]);
+  const [fitClasses, setFitClasses] = useState([]);
   // const [studio, setStudio] = useState(null);
   const history = useHistory();
 
