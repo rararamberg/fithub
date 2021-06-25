@@ -6,8 +6,8 @@ import StudioCreateEdit from "../screens/StudioCreateEdit/StudioCreateEdit";
 import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
 import UserStudioDetail from "../screens/UserStudioDetail";
-import { postFitClass } from "../services/classes";
-import { getAllStudios, postStudio } from "../services/studios";
+import { postFitClass, putFitClass } from "../services/classes";
+import { getAllStudios, postStudio, putStudio } from "../services/studios";
 
 function MainContainer(props) {
   const [studios, setStudios] = useState([]);
@@ -35,6 +35,17 @@ function MainContainer(props) {
     // push to user's studio detail page???
     history.push("/");
   };
+
+  //function to update studio
+  const handleUpdateStudio = async (id, formData) => {
+    const studioItem = await putStudio(id, formData);
+    setStudio((prevState) =>
+      prevState.map((studio) => {
+        return studio.id === Number(id) ? studioItem : studio;
+      })
+    );
+  };
+
   //function to create fitclass function
   const handleCreateFitClass = async (formData) => {
     const classItem = await postFitClass(formData);
@@ -42,6 +53,17 @@ function MainContainer(props) {
     // push back to user's studio detail page???
     history.push("/");
   };
+
+  // update class studio
+  const handleUpdateFitClass = async (id, formData) => {
+    const classItem = await putFitClass(id, formData);
+    setFitClass((prevState) =>
+      prevState.map((fitClass) => {
+        return fitClass.id === Number(id) ? classItem : fitClass;
+      })
+    );
+  };
+
   return (
     <div>
       <h2>This is main container</h2>
