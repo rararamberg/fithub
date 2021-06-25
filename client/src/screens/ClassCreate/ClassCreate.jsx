@@ -19,7 +19,7 @@ function ClassCreate(props) {
 
   return (
     <div>
-      <h2>Class Create Page</h2>
+      <h2>What's new?</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
