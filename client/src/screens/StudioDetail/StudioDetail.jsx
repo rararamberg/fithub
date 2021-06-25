@@ -46,7 +46,9 @@ function StudioDetail(props) {
             {/* render datetime to just day of week and time */}
             <p>{fitclass.class_name}</p>
             {currentUser && currentUser.id === studioItem?.user_id ? (
-              <button>EDIT</button>
+              <Link to={`/updateclass/${fitclass.id}`}>
+                <button>EDIT</button>
+              </Link>
             ) : (
               <button>BOOK</button>
             )}

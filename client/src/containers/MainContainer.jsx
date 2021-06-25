@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
 import ClassCreate from "../screens/ClassCreate/ClassCreate";
+import ClassEdit from "../screens/ClassEdit/ClassEdit";
 import StudioCreateEdit from "../screens/StudioCreateEdit/StudioCreateEdit";
 import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
@@ -26,7 +27,7 @@ function MainContainer(props) {
     fetchStudios();
   }, []);
 
-  //function to create class function
+  //function to create fitclass function
   const handleCreateFitClass = async (formData) => {
     const classItem = await postFitClass(formData);
     setFitClass((prevState) => [...prevState, classItem]);
@@ -41,6 +42,9 @@ function MainContainer(props) {
       <Switch>
         <Route path="/studios/:id">
           <StudioDetail currentUser={currentUser} />
+        </Route>
+        <Route path="/updateclass/:id">
+          <ClassEdit />
         </Route>
         {/* <Route path="/users/studios">
           <UserStudioDetail />

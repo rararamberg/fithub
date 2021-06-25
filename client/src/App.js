@@ -11,6 +11,7 @@ import {
 } from "./services/auth";
 import Register from "./screens/Register/Register";
 import MainContainer from "./containers/MainContainer";
+import Landing from "./screens/Landing/Landing";
 
 function App() {
   // objects of data start as null
@@ -47,6 +48,9 @@ function App() {
     <div className="App">
       <Layout currentUser={currentUser} handleLogout={handleLogout}>
         <Switch>
+          <Route exact path="/">
+            <Landing />
+          </Route>
           <Route path="/signin">
             <Login handleLogin={handleLogin} />
           </Route>
