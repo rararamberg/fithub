@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 15px 0;
+}
+
+nav a {
+  margin: 0 20px;
+}
+
+nav button {
+  margin: 0 5px;
+}
+
+nav p {
+  margin: 0 5px;
+}

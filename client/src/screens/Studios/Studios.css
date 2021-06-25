@@ -1,0 +1,23 @@
+.studio-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.short-studio-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.short-studio-info p {
+  text-align: left;
+}
+
+img {
+  width: 300px;
+  height: auto;
+}
