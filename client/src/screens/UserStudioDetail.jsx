@@ -1,28 +1,20 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getOneStudio } from "../../services/studios";
-import "./StudioDetail.css";
+import { getUserStudio } from "../services/studios";
 
-function StudioDetail(props) {
-  // set state for studio
+function UserStudioDetail() {
   const [studioItem, setStudioItem] = useState(null);
-  const { id } = useParams();
 
-  const { currentUser } = props;
-
-  // function to call single studio
   useEffect(() => {
-    const fetchStudioItem = async () => {
-      const studioData = await getOneStudio(id);
-      console.log(studioData);
+    const fetchUserStudio = async () => {
+      const studioData = await getUserStudio();
       setStudioItem(studioData);
+      console.log(studioItem);
     };
-    fetchStudioItem();
-  }, [id]);
-
+  }, []);
   return (
     <div className="studio-detail-container">
-      {/* show studio info including classes */}
+      <h2>User Studio Page</h2>
+      {/* show studio info including classes
       {/* if studio belongs currentuser  then give edit option */}
       <div className="written-studio-info-container">
         <h2>{studioItem?.business_name}</h2>
@@ -37,13 +29,9 @@ function StudioDetail(props) {
         <p>Weekly Class Schedule:</p>
         {studioItem?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
-            {/* render datetime to just day of week and time */}
+            <p>**TIME**</p>
             <p>{fitclass.class_name}</p>
-            {currentUser && currentUser.id === studioItem?.user_id ? (
-              <button>EDIT</button>
-            ) : (
-              <button>BOOK</button>
-            )}
+            <button>EDIT</button>
           </div>
         ))}
       </div>
@@ -51,4 +39,4 @@ function StudioDetail(props) {
   );
 }
 
-export default StudioDetail;
+export default UserStudioDetail;
