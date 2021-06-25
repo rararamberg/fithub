@@ -7,11 +7,12 @@ import StudioDetail from "../screens/StudioDetail/StudioDetail";
 import Studios from "../screens/Studios/Studios";
 import UserStudioDetail from "../screens/UserStudioDetail";
 import { postFitClass } from "../services/classes";
-import { getAllStudios } from "../services/studios";
+import { getAllStudios, postStudio } from "../services/studios";
 
 function MainContainer(props) {
   const [studios, setStudios] = useState([]);
   // empty array or null for fitclass
+  const [studio, setStudio] = useState(null);
   const [fitClass, setFitClass] = useState(null);
   const history = useHistory();
 
@@ -27,11 +28,18 @@ function MainContainer(props) {
     fetchStudios();
   }, []);
 
+  // function to create studio
+  const handleCreateStudio = async (formData) => {
+    const studioItem = await postStudio(formData);
+    setStudio((prevState) => [...prevState, studioItem]);
+    // push to user's studio detail page???
+    history.push("/");
+  };
   //function to create fitclass function
   const handleCreateFitClass = async (formData) => {
     const classItem = await postFitClass(formData);
     setFitClass((prevState) => [...prevState, classItem]);
-    // push back to studios detail???
+    // push back to user's studio detail page???
     history.push("/");
   };
   return (
@@ -50,7 +58,7 @@ function MainContainer(props) {
           <UserStudioDetail />
         </Route> */}
         <Route path="/create-update-studio">
-          <StudioCreateEdit />
+          <StudioCreateEdit handleCreateStudio={handleCreateStudio} />
         </Route>
         <Route path="/createclass">
           <ClassCreate handleCreateFitClass={handleCreateFitClass} />

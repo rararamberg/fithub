@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function StudioCreateEdit() {
+function StudioCreateEdit(props) {
   const [formData, setFormData] = useState({
     business_name: "",
     location: "",
@@ -10,6 +10,7 @@ function StudioCreateEdit() {
   });
 
   const { business_name, location, blurb, image_url, format } = formData;
+  const { handleCreateStudio } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +28,12 @@ function StudioCreateEdit() {
   return (
     <div>
       <h2>Welcome! Let's build your profile.</h2>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleCreateStudio(formData);
+        }}
+      >
         <input
           type="text"
           placeholder="Studio Name"
