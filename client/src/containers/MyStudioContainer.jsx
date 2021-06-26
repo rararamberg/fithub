@@ -83,10 +83,16 @@ function MyStudioContainer(props) {
       <h2>MyStudioContainer</h2>
       <Switch>
         <Route path="/my-studio/updateclass/:id">
-          <ClassEdit handleUpdateFitClass={handleUpdateFitClass} />
+          <ClassEdit
+            handleUpdateFitClass={handleUpdateFitClass}
+            userStudio={userStudio}
+          />
         </Route>
         <Route path="/my-studio/updatestudio/:id">
-          <UserStudioEdit handleUpdateStudio={handleUpdateStudio} />
+          <UserStudioEdit
+            handleUpdateStudio={handleUpdateStudio}
+            userStudio={userStudio}
+          />
         </Route>
         <Route path="/my-studio/create-update-studio">
           <UserStudioCreate handleCreateStudio={handleCreateStudio} />

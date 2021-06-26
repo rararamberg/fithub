@@ -24203,3 +24203,904 @@ Processing by FitClassesController#destroy as HTML
 Completed 204 No Content in 315ms (ActiveRecord: 9.0ms | Allocations: 2898)
 
 
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:17:23 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 69ms (Views: 2.7ms | ActiveRecord: 17.1ms | Allocations: 12466)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:20:35 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 792)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:20:35 -0500
+Started GET "/studios" for ::1 at 2021-06-26 11:20:35 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  [1m[36mStudio Load (10.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 54ms (Views: 21.8ms | ActiveRecord: 29.2ms | Allocations: 14353)
+
+
+  [1m[36mFitClass Load (23.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 109ms (Views: 35.3ms | ActiveRecord: 42.5ms | Allocations: 18974)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:20:44 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 78ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 790)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:20:44 -0500
+Started GET "/studios" for ::1 at 2021-06-26 11:20:44 -0500
+Processing by StudiosController#index as HTML
+Processing by StudiosController#user_studio as HTML
+  [1m[36mStudio Load (1.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.7ms | Allocations: 1467)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.7ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 32ms (Views: 7.0ms | ActiveRecord: 4.0ms | Allocations: 3772)
+
+
+Started GET "/studios/4" for ::1 at 2021-06-26 11:21:47 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mFitClass Load (5.0ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 4]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 21ms (Views: 2.9ms | ActiveRecord: 5.8ms | Allocations: 1516)
+
+
+Started GET "/studios/3" for ::1 at 2021-06-26 11:21:51 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mFitClass Load (2.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 15ms (Views: 5.1ms | ActiveRecord: 3.2ms | Allocations: 1818)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 11:21:59 -0500
+Processing by StudiosController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:21:59 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 85ms (Views: 0.4ms | ActiveRecord: 2.6ms | Allocations: 804)
+
+
+  [1m[36mStudio Load (35.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 128ms (Views: 89.6ms | ActiveRecord: 35.1ms | Allocations: 2304)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:21:59 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.0ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 41ms (Views: 5.2ms | ActiveRecord: 1.6ms | Allocations: 2475)
+
+
+Started POST "/fit_classes" for ::1 at 2021-06-26 11:22:31 -0500
+Processing by FitClassesController#create as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-26T11:22", "class_name"=>"Yin"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mFitClass Create (38.6ms)[0m  [1m[32mINSERT INTO "fit_classes" ("class_name", "schedule_time", "studio_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["class_name", "Yin"], ["schedule_time", "2021-06-26 11:22:00"], ["studio_id", 3], ["created_at", "2021-06-26 16:22:32.015254"], ["updated_at", "2021-06-26 16:22:32.015254"]]
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+Completed 201 Created in 61ms (Views: 0.6ms | ActiveRecord: 46.3ms | Allocations: 3883)
+
+
+Started DELETE "/fit_classes/8" for ::1 at 2021-06-26 11:22:41 -0500
+Processing by FitClassesController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mFitClass Load (0.2ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass::HABTM_Users Destroy (15.6ms)[0m  [1m[31mDELETE FROM "fit_classes_users" WHERE "fit_classes_users"."fit_class_id" = $1[0m  [["fit_class_id", 8]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass Destroy (0.4ms)[0m  [1m[31mDELETE FROM "fit_classes" WHERE "fit_classes"."id" = $1[0m  [["id", 8]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+Completed 204 No Content in 38ms (ActiveRecord: 21.8ms | Allocations: 4233)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:26:09 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 768)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:53:36 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (2.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 106ms (Views: 20.5ms | ActiveRecord: 33.7ms | Allocations: 4640)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:57:52 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 158)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:57:52 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 768)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 11:57:52 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1084)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:58:11 -0500
+Started GET "/studios" for ::1 at 2021-06-26 11:58:11 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:58:11 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 45ms (Views: 44.3ms | ActiveRecord: 0.5ms | Allocations: 2082)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 77ms (Views: 0.2ms | ActiveRecord: 16.4ms | Allocations: 4074)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:58:54 -0500
+Started GET "/studios" for ::1 at 2021-06-26 11:58:54 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 413)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 11:58:54 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (5.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 5.5ms | Allocations: 1961)
+
+
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.6ms | Allocations: 1955)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 11:59:16 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 256ms (Views: 0.5ms | ActiveRecord: 6.9ms | Allocations: 1017)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 11:59:16 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-26 11:59:16 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  [1m[36mFitClass Load (8.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.6ms | Allocations: 2361)
+
+
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 30ms (Views: 7.1ms | ActiveRecord: 11.9ms | Allocations: 4357)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 12:55:24 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"3"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (1.5ms)[0m  [1m[33mUPDATE "studios" SET "business_name" = $1, "blurb" = $2, "format" = $3, "updated_at" = $4 WHERE "studios"."id" = $5[0m  [["business_name", "SpaceJamGym"], ["blurb", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["format", "cardio"], ["updated_at", "2021-06-26 17:55:24.303241"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 74ms (Views: 1.2ms | ActiveRecord: 24.9ms | Allocations: 5389)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:01:16 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:01:16 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 263)
+
+
+  [1m[36mStudio Load (1.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.8ms | Allocations: 1330)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:01:16 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 768)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:01:21 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 151)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:01:21 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:01:21 -0500
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.8ms | Allocations: 1481)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 768)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:01:54 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 270ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 848)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:01:55 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.9ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 1.7ms | Allocations: 2494)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:01:55 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.9ms | Allocations: 1084)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:02:22 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"weight-lifting"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (0.5ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "weight-lifting"], ["updated_at", "2021-06-26 18:02:22.245470"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 3022)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:07:07 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:07:07 -0500
+Processing by StudiosController#index as HTML
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 181)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:07:07 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (2.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 45ms (Views: 38.0ms | ActiveRecord: 2.1ms | Allocations: 2403)
+
+
+  [1m[36mUser Load (33.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 96ms (Views: 0.6ms | ActiveRecord: 48.2ms | Allocations: 4074)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:08:41 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 162)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:08:41 -0500
+Processing by StudiosController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:08:41 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (3.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 3.5ms | Allocations: 1819)
+
+
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 2.4ms | Allocations: 1986)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:09:07 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:09:07 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Processing by StudiosController#index as HTML
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 339)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:09:07 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 108ms (Views: 107.2ms | ActiveRecord: 0.6ms | Allocations: 1925)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 107ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 1969)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:10:38 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 485ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 849)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:10:39 -0500
+Processing by StudiosController#index as HTML
+Started GET "/users/studios" for ::1 at 2021-06-26 13:10:39 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 96ms (Views: 94.8ms | ActiveRecord: 0.7ms | Allocations: 1948)
+
+
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (40.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.6ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 232ms (Views: 142.6ms | ActiveRecord: 53.0ms | Allocations: 3737)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:11:25 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 768)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:11:25 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-26 13:11:25 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (3.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  [1m[36mStudio Load (1.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+Completed 200 OK in 295ms (Views: 290.5ms | ActiveRecord: 3.8ms | Allocations: 1708)
+
+
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (2.1ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 433ms (Views: 3.2ms | ActiveRecord: 5.6ms | Allocations: 4550)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:11:40 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (3.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (2.2ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "cardio"], ["updated_at", "2021-06-26 18:11:40.612225"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 45ms (Views: 0.3ms | ActiveRecord: 7.7ms | Allocations: 3022)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:19:21 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 7ms (Views: 3.3ms | Allocations: 148)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:19:21 -0500
+Processing by StudiosController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:19:21 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 110ms (Views: 104.3ms | ActiveRecord: 40.2ms | Allocations: 5992)
+
+
+  [1m[36mUser Load (13.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 86ms (Views: 0.5ms | ActiveRecord: 62.4ms | Allocations: 5839)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:19:39 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.8ms | Allocations: 1105)
+
+
+Started GET "/studios/3" for ::1 at 2021-06-26 13:19:45 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mFitClass Load (0.9ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 1.3ms | Allocations: 1843)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:19:50 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (2.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 2.2ms | Allocations: 1084)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:20:38 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 303ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 850)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:20:38 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (2.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 48ms (Views: 5.1ms | ActiveRecord: 3.2ms | Allocations: 2480)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:20:38 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 103ms (Views: 102.3ms | ActiveRecord: 0.3ms | Allocations: 1085)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:25:55 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"weight-lifting"}, "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (2.0ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "weight-lifting"], ["updated_at", "2021-06-26 18:25:55.897704"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (16.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 78ms (Views: 0.8ms | ActiveRecord: 19.4ms | Allocations: 3020)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:26:44 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-26 13:26:44 -0500
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:26:44 -0500
+Processing by StudiosController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 73ms (Views: 8.6ms | ActiveRecord: 2.2ms | Allocations: 4097)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 126ms (Views: 0.4ms | ActiveRecord: 25.6ms | Allocations: 7209)
+
+
+Completed 200 OK in 133ms (Views: 90.5ms | ActiveRecord: 41.9ms | Allocations: 8778)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:26:57 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (3.6ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "cardio"], ["updated_at", "2021-06-26 18:26:57.589818"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 11.8ms | Allocations: 3049)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:29:02 -0500
+Processing by StudiosController#index as HTML
+Started GET "/users/studios" for ::1 at 2021-06-26 13:29:02 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 151)
+
+
+  [1m[36mStudio Load (13.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 57ms (Views: 41.8ms | ActiveRecord: 13.1ms | Allocations: 1894)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:29:02 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 6.5ms | Allocations: 768)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:29:24 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 340ms (Views: 1.1ms | ActiveRecord: 3.9ms | Allocations: 849)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:29:25 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Started GET "/studios" for ::1 at 2021-06-26 13:29:25 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mFitClass Load (6.1ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  [1m[36mStudio Load (5.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 66ms (Views: 60.1ms | ActiveRecord: 5.9ms | Allocations: 1591)
+
+
+Completed 200 OK in 103ms (Views: 83.7ms | ActiveRecord: 8.4ms | Allocations: 4224)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:29:46 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:29:46 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:29:46 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (66.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  [1m[36mUser Load (66.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 78ms (Views: 10.5ms | ActiveRecord: 66.7ms | Allocations: 1960)
+
+
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 77ms (Views: 0.4ms | ActiveRecord: 66.9ms | Allocations: 1968)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:30:23 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 311ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 849)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:30:23 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:30:23 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (3.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 3.4ms | Allocations: 1684)
+
+
+  [1m[36mStudio Load (2.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 21ms (Views: 7.4ms | ActiveRecord: 4.4ms | Allocations: 3862)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:36:07 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.2ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 2.3ms | Allocations: 2472)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:40:34 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:40:34 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:40:34 -0500
+Processing by AuthenticationController#verify as HTML
+Completed 401 Unauthorized in 13ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 453)
+
+
+  [1m[36mStudio Load (2.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 2.9ms | Allocations: 2037)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 96ms (Views: 0.5ms | ActiveRecord: 50.5ms | Allocations: 4279)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:40:59 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (54.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 761ms (Views: 0.5ms | ActiveRecord: 54.7ms | Allocations: 849)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:41:00 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-26 13:41:00 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 127ms (Views: 124.8ms | ActiveRecord: 1.6ms | Allocations: 1683)
+
+
+  [1m[36mStudio Load (6.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (2.7ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 496ms (Views: 357.4ms | ActiveRecord: 10.2ms | Allocations: 4491)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:41:47 -0500
+Started GET "/studios" for ::1 at 2021-06-26 13:41:47 -0500
+Processing by StudiosController#user_studio as HTML
+Processing by StudiosController#index as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 434)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:41:47 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 102ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 1233)
+
+
+Completed 200 OK in 108ms (Views: 106.4ms | ActiveRecord: 0.8ms | Allocations: 2581)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-26 13:42:57 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 200 OK in 345ms (Views: 0.6ms | ActiveRecord: 6.7ms | Allocations: 845)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:42:57 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 1.4ms | Allocations: 1084)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:42:57 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 2.2ms | Allocations: 2472)
+
+
+Started PUT "/fit_classes/1" for ::1 at 2021-06-26 13:43:06 -0500
+Processing by FitClassesController#update as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-24T09:45:00.000Z", "class_name"=>"Gym Jam Class"}, "id"=>"1"}
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mFitClass Update (1.3ms)[0m  [1m[33mUPDATE "fit_classes" SET "class_name" = $1, "updated_at" = $2 WHERE "fit_classes"."id" = $3[0m  [["class_name", "Gym Jam Class"], ["updated_at", "2021-06-26 18:43:06.677054"], ["id", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+Completed 200 OK in 56ms (Views: 1.6ms | ActiveRecord: 17.1ms | Allocations: 4098)
+
+
+Started PUT "/fit_classes/2" for ::1 at 2021-06-26 13:43:19 -0500
+Processing by FitClassesController#update as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-25T12:30:00.000Z", "class_name"=>"Monstar Lift Class"}, "id"=>"2"}
+  [1m[36mFitClass Load (0.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mFitClass Update (3.8ms)[0m  [1m[33mUPDATE "fit_classes" SET "class_name" = $1, "updated_at" = $2 WHERE "fit_classes"."id" = $3[0m  [["class_name", "Monstar Lift Class"], ["updated_at", "2021-06-26 18:43:19.784805"], ["id", 2]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 9.1ms | Allocations: 3853)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:43:36 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJam", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"weight-lifting"}, "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (3.2ms)[0m  [1m[33mUPDATE "studios" SET "business_name" = $1, "format" = $2, "updated_at" = $3 WHERE "studios"."id" = $4[0m  [["business_name", "SpaceJam"], ["format", "weight-lifting"], ["updated_at", "2021-06-26 18:43:36.482792"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 8.8ms | Allocations: 3027)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:45:22 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 768)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:45:23 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-26 13:45:23 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (70.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mStudio Load (2.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 235ms (Views: 232.4ms | ActiveRecord: 2.6ms | Allocations: 2304)
+
+
+  [1m[36mFitClass Load (10.2ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 250ms (Views: 5.4ms | ActiveRecord: 81.8ms | Allocations: 4373)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-26 13:45:39 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceJamGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"weight-lifting"}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (2.5ms)[0m  [1m[33mUPDATE "studios" SET "business_name" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["business_name", "SpaceJamGym"], ["updated_at", "2021-06-26 18:45:39.110344"], ["id", 3]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+Completed 200 OK in 23ms (Views: 1.1ms | ActiveRecord: 11.8ms | Allocations: 3015)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 13:45:51 -0500
+Processing by StudiosController#user_studio as HTML
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 13:45:51 -0500
+Processing by StudiosController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-06-26 13:45:51 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (13.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 6.0ms | ActiveRecord: 13.7ms | Allocations: 1978)
+
+
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 1981)
+
+

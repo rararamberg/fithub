@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function ClassEdit(props) {
@@ -9,13 +9,22 @@ function ClassEdit(props) {
   const { id } = useParams();
 
   const { schedule_time, class_name } = formData;
-  const { handleUpdateFitClass } = props;
+  const { userStudio, handleUpdateFitClass } = props;
 
-  // useEffect(() => {
-  //   const preFillFormData = () => {
-  //     const singleClass = fitClasses.
-  //   };
-  // });
+  useEffect(() => {
+    const prefillFormData = () => {
+      const singleClass = userStudio.fit_classes.find(
+        (fitclass) => fitclass.id === Number(id)
+      );
+      setFormData({
+        schedule_time: singleClass.schedule_time,
+        class_name: singleClass.class_name,
+      });
+    };
+    if (userStudio) {
+      prefillFormData();
+    }
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +36,12 @@ function ClassEdit(props) {
   return (
     <div>
       <h2>Switch it up..</h2>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleUpdateFitClass(id, formData);
+        }}
+      >
         {/* where user can update time and class name shown */}
         <input
           type="datetime-local"

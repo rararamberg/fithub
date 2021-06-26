@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function UserStudioEdit(props) {
+  const { userStudio, handleUpdateStudio } = props;
+
   const [formData, setFormData] = useState({
     business_name: "",
     location: "",
@@ -9,10 +11,28 @@ function UserStudioEdit(props) {
     image_url: "",
     format: "",
   });
-  const { id } = useParams();
 
+  // do i need to pass params if I have userStudio id??
+  const { id } = useParams();
   const { business_name, location, blurb, image_url } = formData;
-  const { handleUpdateStudio } = props;
+
+  // console.log(userStudio.id);
+  // console.log(id);
+
+  useEffect(() => {
+    const prefillFormData = () => {
+      setFormData({
+        business_name: userStudio.business_name,
+        location: userStudio.location,
+        blurb: userStudio.blurb,
+        image_url: userStudio.image_url,
+        format: userStudio.format,
+      });
+    };
+    if (userStudio) {
+      prefillFormData();
+    }
+  }, [id]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +47,7 @@ function UserStudioEdit(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleUpdateStudio(formData);
+          handleUpdateStudio(id, formData);
         }}
       >
         <input
@@ -62,7 +82,9 @@ function UserStudioEdit(props) {
           onChange={handleChange}
         />
         <br />
-        <label>Formats:</label>
+        <label>
+          Current Format: <em>{formData.format}</em>
+        </label>
         <div>
           <input
             type="checkbox"

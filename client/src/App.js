@@ -22,6 +22,8 @@ function App() {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
+      // use history here?
+      history.push("/my-studio");
     };
     handleVerify();
   }, []);
