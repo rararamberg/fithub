@@ -5,6 +5,7 @@
 .landing-div h2,
 .landing-div p {
   text-align: left;
+  text-shadow: 1px 1px #cfcfcf;
 }
 
 .build-schedule-div,

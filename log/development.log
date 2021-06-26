@@ -26102,3 +26102,10 @@ Processing by StudiosController#index as HTML
 Completed 200 OK in 596ms (Views: 579.9ms | ActiveRecord: 208.7ms | Allocations: 3135)
 
 
+Started GET "/studios" for ::1 at 2021-06-26 16:24:15 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (8.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 311ms (Views: 290.0ms | ActiveRecord: 8.7ms | Allocations: 1084)
+
+
