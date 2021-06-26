@@ -34,7 +34,7 @@ function App() {
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
     setCurrentUser(userData);
-    history.push("/create-update-studio");
+    history.push("/my-studio/create-update-studio");
   };
 
   const handleLogout = () => {

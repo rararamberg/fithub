@@ -27,13 +27,7 @@ function ClassCreate(props) {
         }}
       >
         <input
-          type="date"
-          name="schedule_time"
-          value={schedule_time}
-          onChange={handleChange}
-        />
-        <input
-          type="time"
+          type="datetime-local"
           name="schedule_time"
           value={schedule_time}
           onChange={handleChange}

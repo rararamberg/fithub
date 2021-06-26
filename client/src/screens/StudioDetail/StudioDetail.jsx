@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getOneStudio, getUserStudio } from "../../services/studios";
+import { getOneStudio } from "../../services/studios";
 import "./StudioDetail.css";
 
 function StudioDetail() {

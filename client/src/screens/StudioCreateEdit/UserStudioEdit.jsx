@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-function StudioCreateEdit(props) {
+function UserStudioEdit(props) {
   const [formData, setFormData] = useState({
     business_name: "",
     location: "",
@@ -8,9 +9,10 @@ function StudioCreateEdit(props) {
     image_url: "",
     format: "",
   });
+  const { id } = useParams();
 
   const { business_name, location, blurb, image_url } = formData;
-  const { handleCreateStudio } = props;
+  const { handleUpdateStudio } = props;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,19 +21,13 @@ function StudioCreateEdit(props) {
       [name]: value,
     }));
   };
-
-  // const handleCheck = (e) => {
-  //   let isChecked = e.target.value;
-  //   console.log(isChecked);
-  // };
-
   return (
     <div>
-      <h2>Welcome! Let's build your profile.</h2>
+      <h2>Make some changes.</h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleCreateStudio(formData);
+          handleUpdateStudio(formData);
         }}
       >
         <input
@@ -75,7 +71,7 @@ function StudioCreateEdit(props) {
             value="yoga"
             onClick={handleChange}
           />
-          <label for="yoga">Yoga</label>
+          <label htmlFor="yoga">Yoga</label>
         </div>
         <div>
           <input
@@ -85,7 +81,7 @@ function StudioCreateEdit(props) {
             value="cardio"
             onClick={handleChange}
           />
-          <label for="cardio">Cardio</label>
+          <label htmlFor="cardio">Cardio</label>
         </div>
         <div>
           <input
@@ -95,7 +91,7 @@ function StudioCreateEdit(props) {
             value="weight-lifting"
             onClick={handleChange}
           />
-          <label for="weight-lifting">Weight Lifting</label>
+          <label htmlFor="weight-lifting">Weight Lifting</label>
         </div>
 
         <p>Clients can contact you here:</p>
@@ -107,4 +103,4 @@ function StudioCreateEdit(props) {
   );
 }
 
-export default StudioCreateEdit;
+export default UserStudioEdit;

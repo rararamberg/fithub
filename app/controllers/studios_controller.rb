@@ -23,7 +23,7 @@ class StudiosController < ApplicationController
     @studio.user = @current_user
 
     if @studio.save
-      render json: @studio, status: :created
+      render json: @studio, include: :fit_classes , status: :created
     else
       render json: @studio.errors, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class StudiosController < ApplicationController
   # PATCH/PUT /studios/1
   def update
     if @current_user.studio.update(studio_params)
-      render json: @studio
+      render json: @studio, include: :fit_classes
     else
       render json: @studio.errors, status: :unprocessable_entity
     end
