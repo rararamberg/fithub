@@ -6,10 +6,10 @@ function ClassEdit(props) {
     schedule_time: "",
     class_name: "",
   });
-  // const { id } = useParams();
+  const { id } = useParams();
 
-  // const { schedule_time, class_name } = formData;
-  // const { handleUpdateFitClass, handleDeleteFitClass } = props;
+  const { schedule_time, class_name } = formData;
+  const { handleUpdateFitClass } = props;
 
   // useEffect(() => {
   //   const preFillFormData = () => {
@@ -17,17 +17,33 @@ function ClassEdit(props) {
   //   };
   // });
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   return (
     <div>
       <h2>Switch it up..</h2>
-      <form>{/* where user can update time and class name shown */}</form>
+      <form>
+        {/* where user can update time and class name shown */}
+        <input
+          type="datetime-local"
+          name="schedule_time"
+          value={schedule_time}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="class_name"
+          value={class_name}
+          onChange={handleChange}
+        />
+        <br />
+        <button>Save Changes</button>
+      </form>
     </div>
   );
 }

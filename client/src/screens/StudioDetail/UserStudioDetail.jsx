@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function UserStudioDetail(props) {
-  const { userStudio } = props;
+  const { userStudio, handleDeleteFitClass } = props;
 
   return (
     <div className="studio-detail-container">
@@ -28,6 +28,9 @@ function UserStudioDetail(props) {
             <Link to={`/my-studio/updateclass/${fitclass.id}`}>
               <button>EDIT</button>
             </Link>
+            <button onClick={() => handleDeleteFitClass(fitclass.id)}>
+              Delete
+            </button>
           </div>
         ))}
         <Link to="/my-studio/createclass">

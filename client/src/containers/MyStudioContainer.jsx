@@ -63,6 +63,7 @@ function MyStudioContainer(props) {
         return fitClass.id === Number(id) ? classItem : fitClass;
       }),
     }));
+    history.push("/my-studio");
   };
 
   // delete fitclass
@@ -74,6 +75,7 @@ function MyStudioContainer(props) {
         (fitClass) => fitClass.id !== id
       ),
     }));
+    // history.push("/my-studio");
   };
 
   return (
@@ -81,10 +83,7 @@ function MyStudioContainer(props) {
       <h2>MyStudioContainer</h2>
       <Switch>
         <Route path="/my-studio/updateclass/:id">
-          <ClassEdit
-            handleUpdateFitClass={handleUpdateFitClass}
-            handleDeleteFitClass={handleDeleteFitClass}
-          />
+          <ClassEdit handleUpdateFitClass={handleUpdateFitClass} />
         </Route>
         <Route path="/my-studio/updatestudio/:id">
           <UserStudioEdit handleUpdateStudio={handleUpdateStudio} />
@@ -96,7 +95,10 @@ function MyStudioContainer(props) {
           <ClassCreate handleCreateFitClass={handleCreateFitClass} />
         </Route>
         <Route path="/my-studio">
-          <UserStudioDetail userStudio={userStudio} />
+          <UserStudioDetail
+            userStudio={userStudio}
+            handleDeleteFitClass={handleDeleteFitClass}
+          />
         </Route>
       </Switch>
     </div>
