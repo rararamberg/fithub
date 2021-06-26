@@ -1,0 +1,25 @@
+.landing-div {
+  padding: 0 25px;
+}
+
+.landing-div h2,
+.landing-div p {
+  text-align: left;
+}
+
+.build-schedule-div,
+.build-practice-div {
+  margin: 45px 0;
+}
+
+.landing-div h2 span {
+  font-weight: 900;
+}
+
+.landing-div .schedule {
+  color: #8c2a82;
+}
+
+.landing-div .practice {
+  color: #9e2819;
+}

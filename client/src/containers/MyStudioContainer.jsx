@@ -82,7 +82,6 @@ function MyStudioContainer(props) {
 
   return (
     <div>
-      <h2>MyStudioContainer</h2>
       <Switch>
         <Route path="/my-studio/updateclass/:id">
           <ClassEdit

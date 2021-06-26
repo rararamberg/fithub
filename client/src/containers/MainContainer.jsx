@@ -21,7 +21,6 @@ function MainContainer(props) {
 
   return (
     <div>
-      <h2>This is main container</h2>
       <Switch>
         <Route path="/studios/:id">
           <StudioDetail />
