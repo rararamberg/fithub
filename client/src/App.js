@@ -18,12 +18,17 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  // may need eyes on this..
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
       // use history here?
-      history.push("/my-studio");
+      if (!userData) {
+        history.push("/");
+      } else {
+        history.push("/my-studio");
+      }
     };
     handleVerify();
   }, []);
