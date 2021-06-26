@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getOneStudio } from "../../services/studios";
 import "./StudioDetail.css";
+import { DateTime } from "luxon";
 
 function StudioDetail() {
   // set state for studio

@@ -30,7 +30,10 @@ function MainContainer(props) {
           <Studios studios={studios} />
         </Route>
         <Route path="/my-studio">
-          <MyStudioContainer setStudios={setStudios} />
+          <MyStudioContainer
+            setStudios={setStudios}
+            currentUser={currentUser}
+          />
         </Route>
       </Switch>
     </div>

@@ -12,15 +12,17 @@ function MyStudioContainer(props) {
   const [userStudio, setUserStudio] = useState(null);
   const history = useHistory();
 
-  const { setStudios } = props;
+  const { setStudios, currentUser } = props;
 
   useEffect(() => {
     const fetchMyStudio = async () => {
       const studioData = await getUserStudio();
       setUserStudio(studioData);
     };
-    fetchMyStudio();
-  }, []);
+    if (currentUser) {
+      fetchMyStudio();
+    }
+  }, [currentUser]);
 
   // function to create studio
   const handleCreateStudio = async (formData) => {

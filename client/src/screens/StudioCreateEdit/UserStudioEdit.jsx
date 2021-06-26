@@ -14,7 +14,7 @@ function UserStudioEdit(props) {
 
   // do i need to pass params if I have userStudio id??
   const { id } = useParams();
-  const { business_name, location, blurb, image_url } = formData;
+  const { business_name, location, blurb, image_url, format } = formData;
 
   // console.log(userStudio.id);
   // console.log(id);
@@ -32,7 +32,7 @@ function UserStudioEdit(props) {
     if (userStudio) {
       prefillFormData();
     }
-  }, [id]);
+  }, [id, userStudio]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -82,13 +82,12 @@ function UserStudioEdit(props) {
           onChange={handleChange}
         />
         <br />
-        <label>
-          Current Format: <em>{formData.format}</em>
-        </label>
+        <label>Format:</label>
         <div>
           <input
             type="checkbox"
             name="format"
+            checked={format === "yoga"}
             id="yoga"
             value="yoga"
             onClick={handleChange}
@@ -99,6 +98,7 @@ function UserStudioEdit(props) {
           <input
             type="checkbox"
             name="format"
+            checked={format === "cardio"}
             id="cardio"
             value="cardio"
             onClick={handleChange}
@@ -109,6 +109,7 @@ function UserStudioEdit(props) {
           <input
             type="checkbox"
             name="format"
+            checked={format === "weight-lifting"}
             id="weight-lifting"
             value="weight-lifting"
             onClick={handleChange}

@@ -17,14 +17,14 @@ function ClassEdit(props) {
         (fitclass) => fitclass.id === Number(id)
       );
       setFormData({
-        schedule_time: singleClass.schedule_time,
+        schedule_time: new Date(singleClass.schedule_time).toISOString(),
         class_name: singleClass.class_name,
       });
     };
     if (userStudio) {
       prefillFormData();
     }
-  }, [id]);
+  }, [id, userStudio]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,6 +46,7 @@ function ClassEdit(props) {
         <input
           type="datetime-local"
           name="schedule_time"
+          defaultValue={schedule_time}
           value={schedule_time}
           onChange={handleChange}
         />

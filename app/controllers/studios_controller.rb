@@ -32,9 +32,9 @@ class StudiosController < ApplicationController
   # PATCH/PUT /studios/1
   def update
     if @current_user.studio.update(studio_params)
-      render json: @studio, include: :fit_classes
+      render json: @current_user.studio, include: :fit_classes
     else
-      render json: @studio.errors, status: :unprocessable_entity
+      render json: @current_user.studio.errors, status: :unprocessable_entity
     end
   end
 
