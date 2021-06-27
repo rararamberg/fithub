@@ -118,8 +118,8 @@ function UserStudioEdit(props) {
           <label htmlFor="weight-lifting">Weight Lifting</label>
         </div>
 
-        <p>Clients can contact you here:</p>
-        <p>**studio owner email**</p>
+        {/* <p>Clients can contact you here:</p>
+        <p>**studio owner email**</p> */}
         {/* once submitted direct user to their studio's detail page */}
         <button>DONE!</button>
       </form>
