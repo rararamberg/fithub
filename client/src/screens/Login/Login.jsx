@@ -37,7 +37,6 @@ function Login(props) {
             onChange={handleChange}
           />
         </label>
-        <br />
         <label>
           <p>Password</p>
           <input
@@ -47,9 +46,10 @@ function Login(props) {
             onChange={handleChange}
           />
         </label>
-        <br />
-        <Link to="/register">need to register?</Link>
-        <button>Sign In</button>
+        <div className="register-link-login-button-div">
+          <Link to="/register">need to register?</Link>
+          <button>Sign In</button>
+        </div>
       </form>
     </div>
   );
