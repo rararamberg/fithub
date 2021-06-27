@@ -24,3 +24,16 @@ nav button {
 nav p {
   margin: 0 5px;
 }
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 5px 10px;
+  }
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    padding: 5px 0;
+  }
+}

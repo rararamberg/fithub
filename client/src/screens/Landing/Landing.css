@@ -6,6 +6,7 @@
 .landing-div p {
   text-align: left;
   text-shadow: 1px 1px #cfcfcf;
+  letter-spacing: 1px;
 }
 
 .build-schedule-div,
@@ -23,4 +24,34 @@
 
 .landing-div .practice {
   color: #9e2819;
+}
+
+@media screen and (max-width: 600px) {
+  .landing-div h2,
+  .landing-div p {
+    text-align: center;
+  }
+
+  .build-schedule-div,
+  .build-practice-div {
+    margin: 10px 0;
+  }
+
+  .landing-div h2 span {
+    font-size: 56px;
+    font-weight: 700;
+  }
+
+  .landing-div h2 {
+    font-size: 40px;
+  }
+
+  .landing-div p {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .landing-div {
+    padding: 10px 5px;
+  }
 }
