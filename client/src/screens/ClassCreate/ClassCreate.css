@@ -2,6 +2,14 @@
   border: 1px solid black;
   margin: 20px auto;
   padding: 10px 0;
+  width: 95vw;
+}
+
+.class-create-div h2 {
+  text-align: left;
+  margin: 20px auto;
+  width: 85vw;
+  padding: 10px 10px 10px 0;
 }
 
 .class-create-div input {
