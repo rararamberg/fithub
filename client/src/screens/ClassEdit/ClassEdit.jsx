@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './ClassEdit.css'
 
 function ClassEdit(props) {
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ function ClassEdit(props) {
     }));
   };
   return (
-    <div>
+    <div className="class-edit-div">
       <h2>Switch it up..</h2>
       <form
         onSubmit={(e) => {
@@ -43,6 +44,7 @@ function ClassEdit(props) {
         }}
       >
         {/* where user can update time and class name shown */}
+        <div className="input-container">
         <input
           type="datetime-local"
           name="schedule_time"
@@ -56,7 +58,7 @@ function ClassEdit(props) {
           value={class_name}
           onChange={handleChange}
         />
-        <br />
+        </div>
         <button>Save Changes</button>
       </form>
     </div>

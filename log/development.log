@@ -26980,3 +26980,15 @@ Processing by StudiosController#user_studio as HTML
 Completed 200 OK in 39ms (Views: 10.7ms | ActiveRecord: 7.4ms | Allocations: 2472)
 
 
+Started PUT "/studios/3" for ::1 at 2021-06-27 18:20:06 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:35:in `update'
+Completed 200 OK in 71ms (Views: 4.1ms | ActiveRecord: 12.6ms | Allocations: 5353)
+
+
