@@ -51,6 +51,7 @@ function UserStudioEdit(props) {
           handleUpdateStudio(id, formData);
         }}
       >
+        <div className="input-div">
         <input
           type="text"
           placeholder="Studio Name"
@@ -66,56 +67,60 @@ function UserStudioEdit(props) {
           value={location}
           onChange={handleChange}
         />
-        
-        <textarea
-          type="text"
-          placeholder="Tell us about your gym or studio.."
-          name="blurb"
-          value={blurb}
-          onChange={handleChange}
-        />
-        
-        <input
-          type="text"
-          placeholder="Insert image URL here"
-          name="image_url"
-          value={image_url}
-          onChange={handleChange}
-        />
+        </div>
+        <div className="input-div">
+          <textarea
+            type="text"
+            placeholder="Tell us about your gym or studio.."
+            name="blurb"
+            value={blurb}
+            onChange={handleChange}
+          />
+          
+          <input
+            type="text"
+            placeholder="Insert image URL here"
+            name="image_url"
+            value={image_url}
+            onChange={handleChange}
+          />
+        </div>
         
         <label>Format:</label>
-        <div>
-          <input
-            type="checkbox"
-            name="format"
-            checked={format === "yoga"}
-            id="yoga"
-            value="yoga"
-            onClick={handleChange}
-          />
-          <label htmlFor="yoga">Yoga</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="format"
-            checked={format === "cardio"}
-            id="cardio"
-            value="cardio"
-            onClick={handleChange}
-          />
-          <label htmlFor="cardio">Cardio</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="format"
-            checked={format === "weight-lifting"}
-            id="weight-lifting"
-            value="weight-lifting"
-            onClick={handleChange}
-          />
-          <label htmlFor="weight-lifting">Weight Lifting</label>
+        <div className="checkbox-container">
+          <div className="checkbox-div">
+            <input
+              type="checkbox"
+              name="format"
+              checked={format === "yoga"}
+              id="yoga"
+              value="yoga"
+              onClick={handleChange}
+            />
+            <label htmlFor="yoga">Yoga</label>
+          </div>
+          <div className="checkbox-div">
+            <input
+              type="checkbox"
+              name="format"
+              checked={format === "cardio"}
+              id="cardio"
+              value="cardio"
+              onClick={handleChange}
+            />
+            <label htmlFor="cardio">Cardio</label>
+          </div>
+          <div className="checkbox-div">
+            <input
+              type="checkbox"
+              name="format"
+              checked={format === "weight-lifting"}
+              id="weight-lifting"
+              value="weight-lifting"
+              onClick={handleChange}
+            />
+            <label htmlFor="weight-lifting">Weight Lifting</label>
+          </div>
         </div>
 
         {/* <p>Clients can contact you here:</p>

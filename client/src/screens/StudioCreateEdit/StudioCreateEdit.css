@@ -17,12 +17,42 @@
   justify-content: space-evenly;
 }
 
-.studio-create-edit-div input, .studio-create-edit-div textarea {
+.input-div textarea {
+  height: 100px;
+}
+.input-div input, .input-div textarea {
+  margin: 5px 0;
+  width: 30vw;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.checkbox-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 5px;
+  
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin: 10px 0;
 }
 
 @media screen and (max-width: 600px){
   .studio-create-edit-div {
     width: 95vw;
+  }
+  .input-div input, .input-div textarea {
+    width: 75vw;
   }
 }
