@@ -7,7 +7,7 @@
 .class-edit-div input {
   padding: 5px;
   border: 1px solid #c4c4c4;
-  width: 130px;
+  width: 40vw;
 }
 
 .input-container {
@@ -17,13 +17,17 @@
   width: 85vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  
+  justify-content: space-between;
 }
 
 
 @media screen and (max-width: 600px) {
   .class-edit-div input {
     margin: 10px auto;
+    width: 130px;
+  }
+  
+  .input-container {
+    justify-content: space-evenly;
   }
 }
