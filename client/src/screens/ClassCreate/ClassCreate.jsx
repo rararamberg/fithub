@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './ClassCreate.css'
 
 function ClassCreate(props) {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ function ClassCreate(props) {
   };
 
   return (
-    <div>
+    <div className="class-create-div">
       <h2>What's new?</h2>
       <form
         onSubmit={(e) => {
@@ -26,19 +27,20 @@ function ClassCreate(props) {
           handleCreateFitClass(formData);
         }}
       >
-        <input
-          type="datetime-local"
-          name="schedule_time"
-          value={schedule_time}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="class_name"
-          value={class_name}
-          onChange={handleChange}
-        />
-        <br />
+        <div className="input-container">
+          <input
+            type="datetime-local"
+            name="schedule_time"
+            value={schedule_time}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="class_name"
+            value={class_name}
+            onChange={handleChange}
+          />
+        </div>
         <button>Submit</button>
       </form>
     </div>
