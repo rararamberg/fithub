@@ -4,9 +4,16 @@
   border: 1px solid black;
 }
 
-.login-div label,
+.login-div label {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .login-div a {
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .login-div input,

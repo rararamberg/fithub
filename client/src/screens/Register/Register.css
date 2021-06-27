@@ -1,0 +1,18 @@
+.register-div {
+  margin: 20px 10px;
+  padding: 10px 0;
+  border: 1px solid black;
+}
+
+.register-div label {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register-div input,
+.register-div button {
+  margin: 10px 10px;
+}

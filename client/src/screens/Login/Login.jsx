@@ -28,21 +28,25 @@ function Login(props) {
           handleLogin(formData);
         }}
       >
-        <label>Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-        />
+        <label>
+          <p>Username</p>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+          />
+        </label>
         <br />
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
+        <label>
+          <p>Password</p>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
         <br />
         <Link to="/register">need to register?</Link>
         <button>Sign In</button>
