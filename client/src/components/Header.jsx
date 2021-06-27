@@ -10,14 +10,18 @@ function Header(props) {
           <h1>FitHub</h1>
         </Link>
         <nav>
-          <Link to="/studios">Studios</Link>
           {currentUser ? (
             <>
+              <Link to='/my-studio'>
               <p>Hello, {currentUser.first_name}</p>
+              </Link>
               <button onClick={handleLogout}>Sign Out</button>
             </>
           ) : (
-            <Link to="/signin">Sign In</Link>
+              <>
+            <Link to="/studios">Studios</Link>
+                <Link to="/signin">Sign In</Link>
+                </>
           )}
         </nav>
       </header>
