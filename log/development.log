@@ -26379,3 +26379,45 @@ Processing by StudiosController#user_studio as HTML
 Completed 200 OK in 26ms (Views: 3.4ms | ActiveRecord: 3.5ms | Allocations: 2472)
 
 
+Started GET "/studios" for ::1 at 2021-06-26 19:08:34 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (8.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 627ms (Views: 585.1ms | ActiveRecord: 183.5ms | Allocations: 3190)
+
+
+Started GET "/studios" for ::1 at 2021-06-26 19:15:14 -0500
+Processing by StudiosController#index as HTML
+Started GET "/auth/verify" for ::1 at 2021-06-26 19:15:14 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mStudio Load (6.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 307ms (Views: 300.2ms | ActiveRecord: 97.0ms | Allocations: 5840)
+
+
+  [1m[36mUser Load (76.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Completed 200 OK in 480ms (Views: 1.1ms | ActiveRecord: 236.8ms | Allocations: 5898)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-26 19:15:15 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (36.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (8.6ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 303ms (Views: 53.3ms | ActiveRecord: 46.1ms | Allocations: 2518)
+
+
+Started GET "/studios/4" for ::1 at 2021-06-26 19:19:59 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudio Load (5.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mFitClass Load (0.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 4]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 119ms (Views: 14.0ms | ActiveRecord: 6.2ms | Allocations: 1710)
+
+
