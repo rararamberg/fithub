@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './StudioCreateEdit.css'
 
 function UserStudioEdit(props) {
   const { userStudio, handleUpdateStudio } = props;
@@ -42,7 +43,7 @@ function UserStudioEdit(props) {
     }));
   };
   return (
-    <div>
+    <div className='studio-create-edit-div'>
       <h2>Make some changes.</h2>
       <form
         onSubmit={(e) => {
@@ -57,7 +58,7 @@ function UserStudioEdit(props) {
           value={business_name}
           onChange={handleChange}
         />
-        <br />
+        
         <input
           type="text"
           placeholder="Where are you located?"
@@ -65,7 +66,7 @@ function UserStudioEdit(props) {
           value={location}
           onChange={handleChange}
         />
-        <br />
+        
         <textarea
           type="text"
           placeholder="Tell us about your gym or studio.."
@@ -73,7 +74,7 @@ function UserStudioEdit(props) {
           value={blurb}
           onChange={handleChange}
         />
-        <br />
+        
         <input
           type="text"
           placeholder="Insert image URL here"
@@ -81,7 +82,7 @@ function UserStudioEdit(props) {
           value={image_url}
           onChange={handleChange}
         />
-        <br />
+        
         <label>Format:</label>
         <div>
           <input

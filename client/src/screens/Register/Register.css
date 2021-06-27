@@ -1,5 +1,5 @@
 .register-div {
-  margin: 20px 10px;
+  margin: 20px auto;
   padding: 10px 0;
   border: 1px solid black;
   display: flex;
@@ -8,7 +8,7 @@
   align-items: center;
   align-content: space-between;
   width: 65vw;
-  height: 50vh;
+  height: fit-content;
 }
 
 .register-div h2 {
@@ -21,9 +21,10 @@
   padding: 0 40px;
   display: flex;
   flex-direction: row;
-  justify-content:center;
+  justify-content: space-between;
   align-items: center;
 }
+
 
 .register-div input,
 .register-div button {
