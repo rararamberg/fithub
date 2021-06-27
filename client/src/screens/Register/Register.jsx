@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Register.css";
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ function Register(props) {
   };
 
   return (
-    <div>
+    <div className="register-div">
       <h2>Create Account</h2>
       <form
         onSubmit={(e) => {

@@ -1,0 +1,15 @@
+.login-div {
+  margin: 20px 10px;
+  padding: 10px 0;
+  border: 1px solid black;
+}
+
+.login-div label,
+.login-div a {
+  padding: 0 10px;
+}
+
+.login-div input,
+.login-div button {
+  margin: 10px 10px;
+}
