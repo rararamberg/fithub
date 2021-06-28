@@ -10,8 +10,7 @@ function Search(props) {
         placeholder="Search"
         type="text"
         value={props.value}
-        onChange={(e)=> props.handleSearch(e)}
-        autoFocus
+        onChange={(e)=> handleSearch(e)}
       />
     </form>
   )

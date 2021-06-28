@@ -6,8 +6,17 @@ import "./Studios.css";
 
 function Studios(props) {
   const { studios } = props;
+
   const [searchResult, setSearchResult] = useState(studios);
 
+  
+  const handleFilter = (type) => {
+    const results = studios.filter((studio) =>
+      studio.format.includes(type)
+    );
+    setSearchResult(results);
+  };
+  
   const handleSearch = (event) => {
     const results = studios.filter((studio) =>
       studio.business_name.toLowerCase().includes(event.target.value.toLowerCase())
@@ -15,19 +24,10 @@ function Studios(props) {
     setSearchResult(results);
     // setApplySort(true);
   };
-
-  const handleFilter = (type) => {
-    const results = studios.filter((studio) =>
-      studio.format.includes(type)
-    );
-    setSearchResult(results);
-  }
-
   return (
     <div className="all-studios-div">
-      <h3>Studios page</h3>
       <div className="filter-components-container">
-        <FilterBy handleFilter={handleFilter} setSearchResult={setSearchResult} />
+        <FilterBy handleFilter={handleFilter} setSearchResult={setSearchResult} studios={studios}/>
         <Search handleSearch={handleSearch}/>
       </div>
       {searchResult.map((studio) => (

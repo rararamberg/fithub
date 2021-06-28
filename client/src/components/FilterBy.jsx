@@ -1,17 +1,22 @@
 
+import DropdownButton  from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 function FilterBy(props) {
-  const { handleFilter, setSearchResult } = props
+  const { handleFilter, setSearchResult, studios } = props
   
+  const filterFormat = (e) => {
+    handleFilter(e);
+  }
   // onChange={(e) => handleFilter(e.target.value)}
   return (
     <form onSubmit={(e) => {e.preventDefault()}}>
-      <select className="filter-dropdown" >
-        <option >Filter By All</option>
-        <option value='yoga'>Yoga</option>
-        <option value='cardio'>Cardio</option>
-        <option value='weight-lifting'>Weight Lifting</option>
-      </select>
+      <DropdownButton id="dropdown-basic-button" title="Filter By Format">
+        <Dropdown.Item eventKey='yoga' onSelect={filterFormat}>Yoga</Dropdown.Item>
+        <Dropdown.Item eventKey='cardio' onSelect={filterFormat}>Cardio</Dropdown.Item>
+        <Dropdown.Item eventKey='weight-lifting' onSelect={filterFormat}>Weight Lifting</Dropdown.Item>
+        <Dropdown.Item onSelect={() => {setSearchResult(studios)}}>All</Dropdown.Item>
+      </DropdownButton>
     </form>
   )
 }
