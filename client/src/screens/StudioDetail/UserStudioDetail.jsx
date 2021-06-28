@@ -24,7 +24,7 @@ function UserStudioDetail(props) {
         <p className="weekly-title">Weekly Class Schedule:</p>
         {userStudio?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
-            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'America/Chicago'}).toFormat("cccc t")}</p>
+            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
             <Link to={`/my-studio/update-class/${fitclass.id}`}>
               <button className="edit-button">EDIT</button>

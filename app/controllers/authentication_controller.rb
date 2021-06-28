@@ -12,7 +12,7 @@ class AuthenticationController < ApplicationController
       token = encode({id: @user.id})
       render json: {
         # hold back digest
-        user: @user.attributes.except("password_digest"),
+        user: {**(@user.attributes.except('password_digest')), has_studio: !!@user.studio},
         token: token
         }, status: :ok
     else
@@ -22,7 +22,7 @@ class AuthenticationController < ApplicationController
   
   # GET /auth/verify
   def verify
-    render json: @current_user.attributes.except("password_digest"), status: :ok
+    render json: {**(@current_user.attributes.except('password_digest')), has_studio: !!@current_user.studio}, status: :ok
   end
 
 

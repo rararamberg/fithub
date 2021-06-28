@@ -19,7 +19,7 @@ function ClassEdit(props) {
         (fitclass) => fitclass.id === Number(id)
       );
       setFormData({
-        schedule_time: DateTime.fromISO(singleClass.schedule_time).toFormat("yyyy-MM-dd'T'hh:mm"),
+        schedule_time: DateTime.fromISO(singleClass.schedule_time, {zone: 'utc'}).toFormat("yyyy-MM-dd'T'hh:mm"),
         class_name: singleClass.class_name,
       });
     };

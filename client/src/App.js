@@ -26,7 +26,10 @@ function App() {
       // use history here?
       if (!userData) {
         history.push("/");
-      } else {
+      } else if (!userData.has_studio) {
+        history.push("/my-studio/create-studio")
+      }
+      else {
         history.push("/my-studio");
       }
     };
@@ -36,7 +39,11 @@ function App() {
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
-    history.push("/my-studio");
+    if (!userData.has_studio) {
+      history.push("/my-studio/create-studio")
+    } else {
+      history.push("/my-studio");
+    }
   };
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
