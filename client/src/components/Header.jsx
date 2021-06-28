@@ -19,7 +19,7 @@ function Header(props) {
             </>
           ) : (
               <>
-            <Link to="/studios">Studios</Link>
+                <Link to="/studios">Studios</Link>
                 <Link to="/signin">Sign In</Link>
                 </>
           )}

@@ -36,7 +36,7 @@ function StudioDetail() {
         {studioItem?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
             {/* render datetime to just day of week and time */}
-            <p>{DateTime.fromISO(fitclass.schedule_time).toFormat("cccc t")}</p>
+            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
             <button className="book-button">BOOK</button>
           </div>
