@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Register.css";
+import Button from 'react-bootstrap/Button'
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ function Register(props) {
             required
           />
         </label>
-        <br />
+        
         <label>
           <p>Last Name</p>
           <input
@@ -51,7 +52,7 @@ function Register(props) {
             required
           />
         </label>
-        <br />
+        
         <label>
           <p>Email</p>
           <input
@@ -62,7 +63,7 @@ function Register(props) {
             required
           />
         </label>
-        <br />
+        
         <label>
           <p>Username</p>
           <input
@@ -73,7 +74,7 @@ function Register(props) {
             required
           />
         </label>
-        <br />
+        
         <label>
           <p>Password</p>
           <input
@@ -84,9 +85,9 @@ function Register(props) {
             required
           />
         </label>
-        <br />
+        
 
-        <button>Sign Up</button>
+        <Button variant="dark" >Sign Up</Button >
       </form>
     </div>
   );
