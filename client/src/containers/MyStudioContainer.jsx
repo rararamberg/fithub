@@ -89,7 +89,7 @@ function MyStudioContainer(props) {
             userStudio={userStudio}
           />
         </Route>
-        <Route path="/my-studio/updatestudio/:id">
+        <Route path="/my-studio/update-studio/:id">
           <UserStudioEdit
             handleUpdateStudio={handleUpdateStudio}
             userStudio={userStudio}

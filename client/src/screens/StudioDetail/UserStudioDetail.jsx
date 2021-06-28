@@ -13,7 +13,7 @@ function UserStudioDetail(props) {
         <h4>
           <em>{userStudio?.location}</em>
         </h4>
-        <Link to={`/my-studio/updatestudio/${userStudio?.id}`}>
+        <Link to={`/my-studio/update-studio/${userStudio?.id}`}>
           <button>Edit Profile</button>
         </Link>
         <p>{userStudio?.blurb}</p>
