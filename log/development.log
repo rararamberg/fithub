@@ -28222,3 +28222,59 @@ Processing by StudiosController#index as HTML
 Completed 200 OK in 126ms (Views: 117.0ms | ActiveRecord: 30.3ms | Allocations: 3445)
 
 
+Started GET "/studios" for ::1 at 2021-06-28 11:37:34 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (11.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 840ms (Views: 757.8ms | ActiveRecord: 100.4ms | Allocations: 3422)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:37:37 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (31.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 104ms (Views: 69.8ms | ActiveRecord: 31.9ms | Allocations: 1368)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:39:56 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (37.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 201ms (Views: 163.1ms | ActiveRecord: 37.3ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:39:58 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 8.4ms | ActiveRecord: 1.8ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:40:25 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:40:27 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (4.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 25ms (Views: 19.1ms | ActiveRecord: 4.4ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:40:44 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.5ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:40:48 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (2.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 2.5ms | Allocations: 1367)
+
+

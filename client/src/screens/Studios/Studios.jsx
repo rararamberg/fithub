@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Search from "../../components/Search";
+import FilterBy from "../../components/FilterBy";
 import "./Studios.css";
 
 function Studios(props) {
@@ -15,10 +16,18 @@ function Studios(props) {
     // setApplySort(true);
   };
 
+  const handleFilter = (type) => {
+    const results = studios.filter((studio) =>
+      studio.format.includes(type)
+    );
+    setSearchResult(results);
+  }
+
   return (
     <div className="all-studios-div">
       <h3>Studios page</h3>
       <div className="filter-components-container">
+        <FilterBy handleFilter={handleFilter} />
         <Search handleSearch={handleSearch}/>
       </div>
       {searchResult.map((studio) => (
