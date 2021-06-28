@@ -124,8 +124,6 @@ function UserStudioEdit(props) {
           </div>
         </div>
 
-        {/* <p>Clients can contact you here:</p>
-        <p>**studio owner email**</p> */}
         {/* once submitted direct user to their studio's detail page */}
         <Button type='submit'>SAVE!</Button>
       </form>
