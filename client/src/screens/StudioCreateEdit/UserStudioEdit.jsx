@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './StudioCreateEdit.css'
+import Button from 'react-bootstrap/Button';
 
 function UserStudioEdit(props) {
   const { userStudio, handleUpdateStudio } = props;
@@ -126,7 +127,7 @@ function UserStudioEdit(props) {
         {/* <p>Clients can contact you here:</p>
         <p>**studio owner email**</p> */}
         {/* once submitted direct user to their studio's detail page */}
-        <button>SAVE!</button>
+        <Button type='submit'>SAVE!</Button>
       </form>
     </div>
   );

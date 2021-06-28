@@ -28546,3 +28546,33 @@ Completed 200 OK in 64ms (Views: 27.4ms | ActiveRecord: 6.8ms | Allocations: 294
 Completed 200 OK in 205ms (Views: 176.5ms | ActiveRecord: 27.6ms | Allocations: 6145)
 
 
+Started DELETE "/fit_classes/19" for ::1 at 2021-06-28 14:39:39 -0500
+Processing by FitClassesController#destroy as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mFitClass Load (0.9ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass::HABTM_Users Destroy (31.1ms)[0m  [1m[31mDELETE FROM "fit_classes_users" WHERE "fit_classes_users"."fit_class_id" = $1[0m  [["fit_class_id", 19]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass Destroy (5.7ms)[0m  [1m[31mDELETE FROM "fit_classes" WHERE "fit_classes"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+Completed 204 No Content in 330ms (ActiveRecord: 107.2ms | Allocations: 4420)
+
+
+Started PUT "/studios/3" for ::1 at 2021-06-28 14:46:29 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mFitClass Load (11.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:35:in `update'
+Completed 200 OK in 164ms (Views: 6.7ms | ActiveRecord: 30.1ms | Allocations: 5249)
+
+

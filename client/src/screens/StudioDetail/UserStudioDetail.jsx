@@ -30,7 +30,7 @@ function UserStudioDetail(props) {
             <Link to={`/my-studio/update-class/${fitclass.id}`}>
               <Button variant='dark' className="edit-button">EDIT</Button>
             </Link>
-            <Button className="delete-button" onClick={() => handleDeleteFitClass(fitclass.id)}>
+            <Button className="delete-button" variant="danger" onClick={() => handleDeleteFitClass(fitclass.id)}>
               DELETE
             </Button>
           </div>

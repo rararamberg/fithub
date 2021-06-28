@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './StudioCreateEdit.css'
+import Button from 'react-bootstrap/Button';
 
 function UserStudioCreate(props) {
   const [formData, setFormData] = useState({
@@ -103,7 +104,7 @@ function UserStudioCreate(props) {
         {/* <p>Clients can contact you here:</p>
         <p>**studio owner email**</p> */}
         {/* once submitted direct user to their studio's detail page */}
-        <button>DONE!</button>
+        <Button type="submit">DONE!</Button>
       </form>
     </div>
   );
