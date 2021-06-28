@@ -27066,3 +27066,90 @@ Processing by StudiosController#show as HTML
 Completed 200 OK in 69ms (Views: 9.4ms | ActiveRecord: 6.9ms | Allocations: 1867)
 
 
+Started POST "/users/" for ::1 at 2021-06-27 19:41:09 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"first_name"=>"Jane", "last_name"=>"Doe", "email"=>"jane@email.com", "username"=>"jane123", "password"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jane123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jane@email.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (61.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "first_name", "last_name", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["username", "jane123"], ["email", "jane@email.com"], ["first_name", "Jane"], ["last_name", "Doe"], ["password_digest", "$2a$12$3OAOzEGSdKFLX2arye.5HO3KyNiVSaMaGftzS4ox2jBVkg8mp1azW"], ["created_at", "2021-06-28 00:41:10.483973"], ["updated_at", "2021-06-28 00:41:10.483973"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Completed 201 Created in 527ms (Views: 1.0ms | ActiveRecord: 105.2ms | Allocations: 6149)
+
+
+Started GET "/studios" for ::1 at 2021-06-27 19:41:10 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 1156)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-27 19:41:10 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 1240)
+
+
+Started POST "/studios" for ::1 at 2021-06-27 19:49:48 -0500
+Processing by StudiosController#create as HTML
+  Parameters: {"studio"=>{"business_name"=>"CardioGroup", "location"=>"Chicago, IL, USA", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80", "format"=>"cardio"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:25:in `create'
+  [1m[36mStudio Create (23.5ms)[0m  [1m[32mINSERT INTO "studios" ("business_name", "location", "blurb", "format", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["business_name", "CardioGroup"], ["location", "Chicago, IL, USA"], ["blurb", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."], ["format", "cardio"], ["image_url", "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"], ["user_id", 11], ["created_at", "2021-06-28 00:49:48.747221"], ["updated_at", "2021-06-28 00:49:48.747221"]]
+  ↳ app/controllers/studios_controller.rb:25:in `create'
+  [1m[36mTRANSACTION (41.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:25:in `create'
+  [1m[36mFitClass Load (2.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 6]]
+  ↳ app/controllers/studios_controller.rb:26:in `create'
+Completed 201 Created in 286ms (Views: 58.9ms | ActiveRecord: 84.6ms | Allocations: 5438)
+
+
+Started POST "/fit_classes" for ::1 at 2021-06-27 19:50:30 -0500
+Processing by FitClassesController#create as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-27T19:50", "class_name"=>"Cycle"}}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (7.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mFitClass Create (22.4ms)[0m  [1m[32mINSERT INTO "fit_classes" ("class_name", "schedule_time", "studio_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["class_name", "Cycle"], ["schedule_time", "2021-06-27 19:50:00"], ["studio_id", 6], ["created_at", "2021-06-28 00:50:30.343767"], ["updated_at", "2021-06-28 00:50:30.343767"]]
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+Completed 201 Created in 114ms (Views: 0.8ms | ActiveRecord: 47.5ms | Allocations: 3225)
+
+
+Started POST "/fit_classes" for ::1 at 2021-06-27 19:50:49 -0500
+Processing by FitClassesController#create as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-28T08:45", "class_name"=>"Circuit"}}
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.8ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mFitClass Create (1.4ms)[0m  [1m[32mINSERT INTO "fit_classes" ("class_name", "schedule_time", "studio_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["class_name", "Circuit"], ["schedule_time", "2021-06-28 08:45:00"], ["studio_id", 6], ["created_at", "2021-06-28 00:50:49.303820"], ["updated_at", "2021-06-28 00:50:49.303820"]]
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+Completed 201 Created in 93ms (Views: 1.9ms | ActiveRecord: 19.6ms | Allocations: 3121)
+
+
+Started GET "/studios" for ::1 at 2021-06-27 19:51:10 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (2.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 2.3ms | Allocations: 1226)
+
+
