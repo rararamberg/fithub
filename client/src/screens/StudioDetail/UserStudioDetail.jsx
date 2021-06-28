@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { DateTime} from "luxon";
+import { DateTime } from "luxon";
+import Button from 'react-bootstrap/Button';
 
 function UserStudioDetail(props) {
   const { userStudio, handleDeleteFitClass } = props;
@@ -14,7 +15,7 @@ function UserStudioDetail(props) {
           <em>{userStudio?.location}</em>
         </h4>
         <Link to={`/my-studio/update-studio/${userStudio?.id}`}>
-          <button>Edit Profile</button>
+          <Button variant="outline-dark">Edit Profile</Button>
         </Link>
         <p>{userStudio?.blurb}</p>
         <p>Contact:</p>
@@ -27,15 +28,15 @@ function UserStudioDetail(props) {
             <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
             <Link to={`/my-studio/update-class/${fitclass.id}`}>
-              <button className="edit-button">EDIT</button>
+              <Button variant='dark' className="edit-button">EDIT</Button>
             </Link>
-            <button className="delete-button" onClick={() => handleDeleteFitClass(fitclass.id)}>
+            <Button className="delete-button" onClick={() => handleDeleteFitClass(fitclass.id)}>
               DELETE
-            </button>
+            </Button>
           </div>
         ))}
         <Link to="/my-studio/create-class">
-          <button className="add-button">Add Class</button>
+          <Button className="add-button">Add Class</Button>
         </Link>
       </div>
     </div>

@@ -49,7 +49,7 @@ function Login(props) {
         </label>
         <div className="register-link-login-button-div">
           <Link to="/register">need to register?</Link>
-          <Button variant="dark">Sign In</Button>
+          <Button variant="dark" type="submit">Sign In</Button>
         </div>
       </form>
     </div>

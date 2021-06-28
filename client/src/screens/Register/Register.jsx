@@ -87,7 +87,7 @@ function Register(props) {
         </label>
         
 
-        <Button variant="dark" >Sign Up</Button >
+        <Button variant="dark" type="submit">Sign Up</Button >
       </form>
     </div>
   );
