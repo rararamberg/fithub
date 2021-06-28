@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DateTime } from "luxon";
+import Button from 'react-bootstrap/Button';
 import './ClassEdit.css'
 
 function ClassEdit(props) {
@@ -60,7 +61,7 @@ function ClassEdit(props) {
           onChange={handleChange}
         />
         </div>
-        <button>Save Changes</button>
+        <Button type='submit'>Save Changes</Button>
       </form>
     </div>
   );
