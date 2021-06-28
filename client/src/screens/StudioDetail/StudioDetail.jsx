@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getOneStudio } from "../../services/studios";
 import "./StudioDetail.css";
 import { DateTime } from "luxon";
+import Button from 'react-bootstrap/Button';
 
 function StudioDetail() {
   // set state for studio
@@ -38,7 +39,7 @@ function StudioDetail() {
             {/* render datetime to just day of week and time */}
             <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
-            <button className="book-button">BOOK</button>
+            <Button variant='dark' className="book-button">BOOK</Button>
           </div>
         ))}
       </div>
