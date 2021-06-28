@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Search from "../../components/Search";
 import FilterBy from "../../components/FilterBy";
 import "./Studios.css";
@@ -7,8 +7,11 @@ import "./Studios.css";
 function Studios(props) {
   const { studios } = props;
 
-  const [searchResult, setSearchResult] = useState(studios);
+  const [searchResult, setSearchResult] = useState([]);
 
+  useEffect(() => {
+    setSearchResult(studios)
+  }, [studios]);
   
   const handleFilter = (type) => {
     const results = studios.filter((studio) =>

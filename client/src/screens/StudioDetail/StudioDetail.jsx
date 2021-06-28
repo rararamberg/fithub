@@ -30,7 +30,7 @@ function StudioDetail() {
         </h4>
         <p>{studioItem?.blurb}</p>
         <p>Contact:</p>
-        <p>** get studio's owner email **</p>
+        <p>{studioItem?.user.email}</p>
       </div>
       <div className="weekly-studio-schedule-container">
         <p>Weekly Class Schedule:</p>

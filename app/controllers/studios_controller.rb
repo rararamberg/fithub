@@ -11,7 +11,7 @@ class StudiosController < ApplicationController
 
   # GET /studios/1
   def show
-    render json: @studio, include: :fit_classes
+    render json: @studio, include: [{user: {only: :email}}, :fit_classes]
   end
 
 
