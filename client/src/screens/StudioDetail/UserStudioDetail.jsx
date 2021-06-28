@@ -18,8 +18,11 @@ function UserStudioDetail(props) {
           <Button variant="outline-dark">Edit Profile</Button>
         </Link>
         <p>{userStudio?.blurb}</p>
-        <p>Contact:</p>
-        <p>** get studio's owner email **</p>
+
+        <p className="format">Format:</p>
+        <p className="format">{userStudio?.format}</p>
+        <p className="contact">Contact:</p>
+        <p className="contact">{userStudio?.user.email} </p>
       </div>
       <div className="weekly-studio-schedule-container">
         <p className="weekly-title">Weekly Class Schedule:</p>

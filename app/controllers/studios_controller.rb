@@ -41,7 +41,7 @@ class StudiosController < ApplicationController
   # custom  method to  retrieve user's studio and the studio's classes
   # GET /users/studios
   def user_studio 
-    render json: @current_user.studio, include: :fit_classes
+    render json: @current_user.studio, include: [{user: {only: :email}}, :fit_classes]
   end
 
 

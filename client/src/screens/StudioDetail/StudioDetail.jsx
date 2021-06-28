@@ -29,8 +29,10 @@ function StudioDetail() {
           <em>{studioItem?.location}</em>
         </h4>
         <p>{studioItem?.blurb}</p>
-        <p>Contact:</p>
-        <p>{studioItem?.user.email}</p>
+        <p className="format">Format:</p>
+        <p className="format">{studioItem?.format}</p>
+        <p className="contact">Contact:</p>
+        <p className="contact">{studioItem?.user.email}</p>
       </div>
       <div className="weekly-studio-schedule-container">
         <p>Weekly Class Schedule:</p>
