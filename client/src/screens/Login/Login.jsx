@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import Button from 'react-bootstrap/Button';
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ function Login(props) {
         </label>
         <div className="register-link-login-button-div">
           <Link to="/register">need to register?</Link>
-          <button>Sign In</button>
+          <Button variant="dark">Sign In</Button>
         </div>
       </form>
     </div>
