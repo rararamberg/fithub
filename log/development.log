@@ -28278,3 +28278,45 @@ Processing by StudiosController#index as HTML
 Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 2.5ms | Allocations: 1367)
 
 
+Started GET "/studios" for ::1 at 2021-06-28 11:50:55 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 455ms (Views: 447.2ms | ActiveRecord: 270.6ms | Allocations: 3418)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:50:59 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 41ms (Views: 33.9ms | ActiveRecord: 1.5ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:54:03 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (10.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 61ms (Views: 49.7ms | ActiveRecord: 10.6ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 11:56:06 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.9ms | Allocations: 1367)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 12:14:47 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 84ms (Views: 78.8ms | ActiveRecord: 22.9ms | Allocations: 3420)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 12:15:08 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.5ms | Allocations: 1367)
+
+

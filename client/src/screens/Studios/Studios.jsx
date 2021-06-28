@@ -6,7 +6,7 @@ import "./Studios.css";
 
 function Studios(props) {
   const { studios } = props;
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState(studios);
 
   const handleSearch = (event) => {
     const results = studios.filter((studio) =>
