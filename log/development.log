@@ -28864,3 +28864,29 @@ Processing by StudiosController#index as HTML
 Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 1367)
 
 
+Started GET "/studios" for ::1 at 2021-06-28 17:13:48 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (7.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 184ms (Views: 176.1ms | ActiveRecord: 50.0ms | Allocations: 3422)
+
+
+Started GET "/studios" for ::1 at 2021-06-28 17:22:06 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (5.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 366ms (Views: 351.8ms | ActiveRecord: 59.4ms | Allocations: 3418)
+
+
+Started GET "/studios/4" for ::1 at 2021-06-28 17:22:19 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudio Load (9.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+  [1m[36mFitClass Load (123.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 4]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 268ms (Views: 61.2ms | ActiveRecord: 135.0ms | Allocations: 2491)
+
+

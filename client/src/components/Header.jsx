@@ -35,10 +35,10 @@ function Header(props) {
     <div>
       <header className="fithub-header">
         {currentUser ? (
-          <h1>FitHub</h1>
+          <h1>Fit<span>Hub</span></h1>
         ) : (
           <Link to="/">
-            <h1>FitHub</h1>
+            <h1>Fit<span>Hub</span></h1>
           </Link>    
         )}
         <nav>
