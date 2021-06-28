@@ -98,7 +98,7 @@ function MyStudioContainer(props) {
         <Route path="/my-studio/create-update-studio">
           <UserStudioCreate handleCreateStudio={handleCreateStudio} />
         </Route>
-        <Route path="/my-studio/createclass">
+        <Route path="/my-studio/create-class">
           <ClassCreate handleCreateFitClass={handleCreateFitClass} />
         </Route>
         <Route path="/my-studio">

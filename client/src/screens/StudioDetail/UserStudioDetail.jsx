@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { DateTime } from "luxon";
+import { DateTime} from "luxon";
 
 function UserStudioDetail(props) {
   const { userStudio, handleDeleteFitClass } = props;
@@ -24,7 +24,7 @@ function UserStudioDetail(props) {
         <p className="weekly-title">Weekly Class Schedule:</p>
         {userStudio?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
-            <p>{DateTime.fromISO(fitclass.schedule_time).toFormat("cccc t")}</p>
+            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'America/Chicago'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
             <Link to={`/my-studio/updateclass/${fitclass.id}`}>
               <button className="edit-button">EDIT</button>
@@ -34,7 +34,7 @@ function UserStudioDetail(props) {
             </button>
           </div>
         ))}
-        <Link to="/my-studio/createclass">
+        <Link to="/my-studio/create-class">
           <button className="add-button">Add Class</button>
         </Link>
       </div>

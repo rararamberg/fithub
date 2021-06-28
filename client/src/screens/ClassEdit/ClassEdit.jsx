@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { DateTime } from "luxon";
 import './ClassEdit.css'
 
 function ClassEdit(props) {
@@ -18,7 +19,7 @@ function ClassEdit(props) {
         (fitclass) => fitclass.id === Number(id)
       );
       setFormData({
-        schedule_time: new Date(singleClass.schedule_time).toISOString(),
+        schedule_time: DateTime.fromISO(singleClass.schedule_time).toFormat("yyyy-MM-dd'T'hh:mm"),
         class_name: singleClass.class_name,
       });
     };
