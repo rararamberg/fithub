@@ -12,6 +12,7 @@ import {
 import Register from "./screens/Register/Register";
 import MainContainer from "./containers/MainContainer";
 import Landing from "./screens/Landing/Landing";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // objects of data start as null

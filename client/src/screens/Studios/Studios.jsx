@@ -27,7 +27,7 @@ function Studios(props) {
     <div className="all-studios-div">
       <h3>Studios page</h3>
       <div className="filter-components-container">
-        <FilterBy handleFilter={handleFilter} />
+        <FilterBy handleFilter={handleFilter} setSearchResult={setSearchResult} />
         <Search handleSearch={handleSearch}/>
       </div>
       {searchResult.map((studio) => (
