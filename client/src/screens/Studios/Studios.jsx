@@ -1,13 +1,27 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import Search from "../../components/Search";
 import "./Studios.css";
 
 function Studios(props) {
   const { studios } = props;
+  const [searchResult, setSearchResult] = useState([]);
+
+  const handleSearch = (event) => {
+    const results = studios.filter((studio) =>
+      studio.business_name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    setSearchResult(results);
+    // setApplySort(true);
+  };
 
   return (
     <div className="all-studios-div">
       <h3>Studios page</h3>
-      {studios.map((studio) => (
+      <div className="filter-components-container">
+        <Search handleSearch={handleSearch}/>
+      </div>
+      {searchResult.map((studio) => (
         <div className="studio-box" key={studio.id}>
           <div className="studio-image">
             <img src={studio.image_url} alt={studio.business_name} />
