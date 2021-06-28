@@ -27408,3 +27408,14 @@ Processing by StudiosController#user_studio as HTML
 Completed 200 OK in 279ms (Views: 21.6ms | ActiveRecord: 59.1ms | Allocations: 4684)
 
 
+Started GET "/users/studios" for ::1 at 2021-06-27 21:03:34 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (1.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 3]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 42ms (Views: 24.7ms | ActiveRecord: 2.8ms | Allocations: 2580)
+
+

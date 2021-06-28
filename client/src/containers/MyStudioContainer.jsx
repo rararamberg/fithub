@@ -83,7 +83,7 @@ function MyStudioContainer(props) {
   return (
     <div>
       <Switch>
-        <Route path="/my-studio/updateclass/:id">
+        <Route path="/my-studio/update-class/:id">
           <ClassEdit
             handleUpdateFitClass={handleUpdateFitClass}
             userStudio={userStudio}

@@ -26,7 +26,7 @@ function UserStudioDetail(props) {
           <div className="class-box" key={fitclass.id}>
             <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'America/Chicago'}).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
-            <Link to={`/my-studio/updateclass/${fitclass.id}`}>
+            <Link to={`/my-studio/update-class/${fitclass.id}`}>
               <button className="edit-button">EDIT</button>
             </Link>
             <button className="delete-button" onClick={() => handleDeleteFitClass(fitclass.id)}>
