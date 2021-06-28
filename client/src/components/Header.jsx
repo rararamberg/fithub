@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+import Button from 'react-bootstrap/Button';
 
 function Header(props) {
   const { currentUser, handleLogout } = props;
@@ -9,7 +10,7 @@ function Header(props) {
       return (
         <>
           <Link to="/studios">Studios</Link>
-          <Link to="/signin">Sign In</Link>
+          <Link to="/signin"><Button variant="outline-primary">Sign In</Button></Link>
         </>
       )
     } else if (currentUser.has_studio) {
@@ -18,14 +19,14 @@ function Header(props) {
           <Link to='/my-studio'>
           <p>Hello, {currentUser.first_name}</p>
           </Link>
-          <button onClick={handleLogout}>Sign Out</button>
+          <Button variant="outline-danger"  onClick={handleLogout}>Sign Out</Button>
         </>
       )
     } else {
       return (
         <>
           <p>Hello, {currentUser.first_name}</p>
-          <button onClick={handleLogout}>Sign Out</button>
+          <Button variant="outline-danger" onClick={handleLogout}>Sign Out</Button>
         </>
       )
     }
