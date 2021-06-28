@@ -41,7 +41,8 @@
   align-content: flex-start;
   border: 1px solid black;
   margin: 10px auto;
-  width: fit-content;
+  width: 50vw;
+  padding: 5px;
 }
 
 
