@@ -3,26 +3,45 @@ import "./Header.css";
 
 function Header(props) {
   const { currentUser, handleLogout } = props;
+
+  const navAccess = () => {
+    if (!currentUser) {
+      return (
+        <>
+          <Link to="/studios">Studios</Link>
+          <Link to="/signin">Sign In</Link>
+        </>
+      )
+    } else if (currentUser.has_studio) {
+      return (
+        <>
+          <Link to='/my-studio'>
+          <p>Hello, {currentUser.first_name}</p>
+          </Link>
+          <button onClick={handleLogout}>Sign Out</button>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <p>Hello, {currentUser.first_name}</p>
+          <button onClick={handleLogout}>Sign Out</button>
+        </>
+      )
+    }
+  }
   return (
     <div>
       <header>
-        <Link to="/">
+        {currentUser ? (
           <h1>FitHub</h1>
-        </Link>
+        ) : (
+          <Link to="/">
+            <h1>FitHub</h1>
+          </Link>    
+        )}
         <nav>
-          {currentUser ? (
-            <>
-              <Link to='/my-studio'>
-              <p>Hello, {currentUser.first_name}</p>
-              </Link>
-              <button onClick={handleLogout}>Sign Out</button>
-            </>
-          ) : (
-              <>
-                <Link to="/studios">Studios</Link>
-                <Link to="/signin">Sign In</Link>
-                </>
-          )}
+          {navAccess()}
         </nav>
       </header>
       <hr />
