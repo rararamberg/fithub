@@ -21,21 +21,21 @@ function UserStudioDetail(props) {
         <p>** get studio's owner email **</p>
       </div>
       <div className="weekly-studio-schedule-container">
-        <p>Weekly Class Schedule:</p>
+        <p className="weekly-title">Weekly Class Schedule:</p>
         {userStudio?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
             <p>{DateTime.fromISO(fitclass.schedule_time).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
             <Link to={`/my-studio/updateclass/${fitclass.id}`}>
-              <button>EDIT</button>
+              <button className="edit-button">EDIT</button>
             </Link>
-            <button onClick={() => handleDeleteFitClass(fitclass.id)}>
-              Delete
+            <button className="delete-button" onClick={() => handleDeleteFitClass(fitclass.id)}>
+              DELETE
             </button>
           </div>
         ))}
         <Link to="/my-studio/createclass">
-          <button>Add Class</button>
+          <button className="add-button">Add Class</button>
         </Link>
       </div>
     </div>

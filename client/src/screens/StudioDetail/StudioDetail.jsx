@@ -38,7 +38,7 @@ function StudioDetail() {
             {/* render datetime to just day of week and time */}
             <p>{DateTime.fromISO(fitclass.schedule_time).toFormat("cccc t")}</p>
             <p>{fitclass.class_name}</p>
-            <button>BOOK</button>
+            <button className="book-button">BOOK</button>
           </div>
         ))}
       </div>

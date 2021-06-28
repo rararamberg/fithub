@@ -1,9 +1,11 @@
 .studio-detail-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
+  width: 95vw;
+  margin: 20px auto;
 }
 
 .written-studio-info-container {
@@ -12,9 +14,21 @@
   justify-content: space-around;
   align-items: flex-start;
   align-content: flex-start;
+  padding: 10px;
+  width: 40vw;
 }
 
 .written-studio-info-container p {
+  text-align: left;
+}
+
+.weekly-studio-schedule-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.weekly-title {
   text-align: left;
 }
 
@@ -26,19 +40,61 @@
   align-content: flex-start;
   border: 1px solid black;
   margin: 10px auto;
+  width: 45vw;
 }
+
 
 .class-box p {
   padding: 0 10px;
+  width: 25%;
 }
 
-.class-box button {
+.book-button{
   margin: 0 10px;
+  width: 15%;
+  padding: 5px;
+}
+
+.delete-button {
+  margin: 0 10px;
+  width: 15%;
+  padding: 5px;
+}
+
+.class-box a {
+  margin: 0 10px;
+  width: 15%;
+}
+.edit-button {
+  width: 100%;
+  padding: 5px;
+}
+
+.add-button{
+  padding: 5px;
+  margin: 10px auto;
 }
 
 @media screen and (max-width: 600px) {
   .studio-detail-container {
     flex-direction: column;
     justify-content: center;
+  }
+
+  .written-studio-info-container{
+    width: 90vw;
+  }
+
+  .class-box{
+    width: 95vw;
+  }
+
+  .class-box p {
+    width: 20%;
+  }
+
+  .delete-button{
+    width: fit-content;
+    height: auto;
   }
 }
