@@ -91,9 +91,16 @@
   padding: 5px;
 }
 
-.add-button {
-  padding: 5px;
+#add-button {
+  padding: 5px 15px;
   margin: 10px auto;
+  background-color: #634491;
+  border-color: #634491;
+  transition: all 200ms ease;
+}
+
+#add-button:hover {
+  transform: scale(1.2);
 }
 
 @media screen and (max-width: 600px) {

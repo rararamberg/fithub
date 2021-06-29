@@ -29535,3 +29535,43 @@ Processing by StudiosController#show as HTML
 Completed 200 OK in 219ms (Views: 112.1ms | ActiveRecord: 30.2ms | Allocations: 2604)
 
 
+Started POST "/auth/login" for ::1 at 2021-06-29 00:14:26 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"bruno@supermail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (35.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bruno@supermail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 86.8ms | Allocations: 3341)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:10:in `login'
+Started POST "/auth/login" for ::1 at 2021-06-29 00:14:41 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+  [1m[36mStudio Load (1.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:15:in `login'
+Completed 200 OK in 289ms (Views: 3.7ms | ActiveRecord: 1.6ms | Allocations: 1800)
+
+
+Started GET "/users/studios" for ::1 at 2021-06-29 00:14:41 -0500
+Processing by StudiosController#user_studio as HTML
+Started GET "/studios" for ::1 at 2021-06-29 00:14:41 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (1.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 126ms (Views: 6.6ms | ActiveRecord: 2.0ms | Allocations: 3479)
+
+
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 154ms (Views: 140.3ms | ActiveRecord: 13.0ms | Allocations: 5973)
+
+

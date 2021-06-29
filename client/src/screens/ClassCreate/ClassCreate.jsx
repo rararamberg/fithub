@@ -1,6 +1,6 @@
 import { useState } from "react";
-import './ClassCreate.css'
-import Button from 'react-bootstrap/Button';
+import "./ClassCreate.css";
+import Button from "react-bootstrap/Button";
 
 function ClassCreate(props) {
   const [formData, setFormData] = useState({
@@ -42,7 +42,9 @@ function ClassCreate(props) {
             onChange={handleChange}
           />
         </div>
-        <Button type='submit'>Submit</Button>
+        <Button id="submit-button" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );
