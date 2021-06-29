@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./Register.css";
+import Button from 'react-bootstrap/Button'
 
 function Register(props) {
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ function Register(props) {
   };
 
   return (
-    <div>
+    <div className="register-div">
       <h2>Create Account</h2>
       <form
         onSubmit={(e) => {
@@ -29,53 +31,63 @@ function Register(props) {
           handleRegister(formData);
         }}
       >
-        <label>First Name</label>
-        <input
-          type="text"
-          name="first_name"
-          value={first_name}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label>Last Name</label>
-        <input
-          type="text"
-          name="last_name"
-          value={last_name}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label>Email</label>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label>Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          required
-        />
-        <br />
+        <label>
+          <p>First Name</p>
+          <input
+            type="text"
+            name="first_name"
+            value={first_name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        
+        <label>
+          <p>Last Name</p>
+          <input
+            type="text"
+            name="last_name"
+            value={last_name}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        
+        <label>
+          <p>Email</p>
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        
+        <label>
+          <p>Username</p>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        
+        <label>
+          <p>Password</p>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        
 
-        <button>Sign Up</button>
+        <Button variant="dark" type="submit">Sign Up</Button >
       </form>
     </div>
   );

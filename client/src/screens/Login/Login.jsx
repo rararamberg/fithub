@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Login.css";
+import Button from 'react-bootstrap/Button';
 
 function Login(props) {
   const [formData, setFormData] = useState({
@@ -19,7 +21,7 @@ function Login(props) {
   };
 
   return (
-    <div>
+    <div className="login-div">
       <h2>Welcome</h2>
       <form
         onSubmit={(e) => {
@@ -27,24 +29,28 @@ function Login(props) {
           handleLogin(formData);
         }}
       >
-        <label>Username</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-        />
-        <br />
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
-        <br />
-        <Link to="/register">need to register?</Link>
-        <button>Sign In</button>
+        <label>
+          <p>Username</p>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          <p>Password</p>
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+          />
+        </label>
+        <div className="register-link-login-button-div">
+          <Link to="/register">need to register?</Link>
+          <Button variant="dark" type="submit">Sign In</Button>
+        </div>
       </form>
     </div>
   );

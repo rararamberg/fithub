@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       @token = encode({ id: @user.id   })
       render json: {
         # remove digest from being sent to front-end
-        user: @user.attributes.except('password_digest'),
+        user: {**(@user.attributes.except('password_digest')), has_studio: !!@user.studio},
         token: @token
         }, status: :created
     else

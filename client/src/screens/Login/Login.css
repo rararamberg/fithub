@@ -1,0 +1,53 @@
+.login-div {
+  margin: 20px auto;
+  padding: 10px 0;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+  width: 65vw;
+  height: 50vh;
+}
+
+.login-div h2 {
+  padding: 5px 45px;
+  margin: 10px 25px;
+  border: 1px solid black;
+}
+
+.login-div label {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+}
+
+.login-div a {
+  padding: 0 15px;
+}
+
+.login-link-login-button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+  align-content: center;
+  padding: 0 40px;
+}
+.login-div input,
+.login-div button {
+  margin: 10px 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+  .login-div {
+    width: 95vw;
+  }
+  .login-div label {
+    justify-content: space-between;
+  }
+}

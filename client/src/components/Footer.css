@@ -1,0 +1,12 @@
+.footer-div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.social-div a {
+  margin: 0 20px;
+  color: #8c2a82;
+}
