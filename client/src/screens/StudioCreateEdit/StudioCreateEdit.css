@@ -9,6 +9,7 @@
   align-content: space-between;
   width: 65vw;
   height: fit-content;
+  box-shadow: 1px 1px #c4c4c4;
 }
 
 .studio-create-edit-div form {
@@ -20,7 +21,8 @@
 .input-div textarea {
   height: 100px;
 }
-.input-div input, .input-div textarea {
+.input-div input,
+.input-div textarea {
   margin: 5px 0;
   width: 30vw;
 }
@@ -37,7 +39,6 @@
   flex-direction: row;
   justify-content: center;
   margin: 0 5px;
-  
 }
 
 .checkbox-container {
@@ -48,11 +49,33 @@
   margin: 10px 0;
 }
 
-@media screen and (max-width: 600px){
+#done-button {
+  padding: 5px 15px;
+  margin: 10px auto;
+  background-color: #8c2a82;
+  border-color: #8c2a82;
+  transition: all 200ms ease;
+}
+#done-button:hover {
+  transform: scale(1.2);
+}
+#save-button {
+  padding: 5px 15px;
+  margin: 10px auto;
+  background-color: #8c2a82;
+  border-color: #8c2a82;
+  transition: all 200ms ease;
+}
+#save-button:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 600px) {
   .studio-create-edit-div {
     width: 95vw;
   }
-  .input-div input, .input-div textarea {
+  .input-div input,
+  .input-div textarea {
     width: 75vw;
   }
 }

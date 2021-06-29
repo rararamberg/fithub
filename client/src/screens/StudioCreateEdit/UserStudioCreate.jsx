@@ -1,6 +1,6 @@
 import { useState } from "react";
-import './StudioCreateEdit.css'
-import Button from 'react-bootstrap/Button';
+import "./StudioCreateEdit.css";
+import Button from "react-bootstrap/Button";
 
 function UserStudioCreate(props) {
   const [formData, setFormData] = useState({
@@ -22,10 +22,13 @@ function UserStudioCreate(props) {
     }));
   };
 
-
   return (
-    <div className='studio-create-edit-div'>
-      <h2>Welcome!<br />Let's build your profile.</h2>
+    <div className="studio-create-edit-div">
+      <h2>
+        Welcome!
+        <br />
+        Let's build your profile.
+      </h2>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -40,7 +43,7 @@ function UserStudioCreate(props) {
             value={business_name}
             onChange={handleChange}
           />
-          
+
           <input
             type="text"
             placeholder="Where are you located?"
@@ -48,7 +51,6 @@ function UserStudioCreate(props) {
             value={location}
             onChange={handleChange}
           />
-
         </div>
         <div className="input-div">
           <textarea
@@ -58,7 +60,7 @@ function UserStudioCreate(props) {
             value={blurb}
             onChange={handleChange}
           />
-        
+
           <input
             type="text"
             placeholder="Insert image URL here"
@@ -104,7 +106,9 @@ function UserStudioCreate(props) {
         {/* <p>Clients can contact you here:</p>
         <p>**studio owner email**</p> */}
         {/* once submitted direct user to their studio's detail page */}
-        <Button type="submit">DONE!</Button>
+        <Button id="done-button" type="submit">
+          DONE!
+        </Button>
       </form>
     </div>
   );
