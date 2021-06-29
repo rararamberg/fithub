@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getOneStudio } from "../../services/studios";
 import "./StudioDetail.css";
 import { DateTime } from "luxon";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function StudioDetail() {
   // set state for studio
@@ -24,7 +24,7 @@ function StudioDetail() {
       {/* show studio info including classes */}
       {/* if studio belongs currentuser  then give edit option */}
       <div className="written-studio-info-container">
-        <h2>{studioItem?.business_name}</h2>
+        <h2 className="studio-title">{studioItem?.business_name}</h2>
         <h4>
           <em>{studioItem?.location}</em>
         </h4>
@@ -39,9 +39,15 @@ function StudioDetail() {
         {studioItem?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
             {/* render datetime to just day of week and time */}
-            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
+            <p>
+              {DateTime.fromISO(fitclass.schedule_time, {
+                zone: "utc",
+              }).toFormat("cccc t")}
+            </p>
             <p>{fitclass.class_name}</p>
-            <Button variant='dark' className="book-button">BOOK</Button>
+            <Button variant="dark" className="book-button">
+              BOOK
+            </Button>
           </div>
         ))}
       </div>

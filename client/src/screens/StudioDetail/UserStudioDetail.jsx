@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { DateTime } from "luxon";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 function UserStudioDetail(props) {
   const { userStudio, handleDeleteFitClass } = props;
@@ -10,7 +10,7 @@ function UserStudioDetail(props) {
       {/* show studio info including classes
       {/* if studio belongs currentuser  then give edit option */}
       <div className="written-studio-info-container">
-        <h2>{userStudio?.business_name}</h2>
+        <h2 className="studio-title">{userStudio?.business_name}</h2>
         <h4>
           <em>{userStudio?.location}</em>
         </h4>
@@ -26,12 +26,22 @@ function UserStudioDetail(props) {
         <p className="weekly-title">Weekly Class Schedule:</p>
         {userStudio?.fit_classes.map((fitclass) => (
           <div className="class-box" key={fitclass.id}>
-            <p>{DateTime.fromISO(fitclass.schedule_time, {zone: 'utc'}).toFormat("cccc t")}</p>
+            <p>
+              {DateTime.fromISO(fitclass.schedule_time, {
+                zone: "utc",
+              }).toFormat("cccc t")}
+            </p>
             <p>{fitclass.class_name}</p>
             <Link to={`/my-studio/update-class/${fitclass.id}`}>
-              <Button variant='dark' className="edit-button">EDIT</Button>
+              <Button variant="dark" className="edit-button">
+                EDIT
+              </Button>
             </Link>
-            <Button className="delete-button" variant="danger" onClick={() => handleDeleteFitClass(fitclass.id)}>
+            <Button
+              className="delete-button"
+              variant="danger"
+              onClick={() => handleDeleteFitClass(fitclass.id)}
+            >
               DELETE
             </Button>
           </div>

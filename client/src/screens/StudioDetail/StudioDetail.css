@@ -19,6 +19,11 @@
   width: 40vw;
 }
 
+.written-studio-info-container .studio-title {
+  font-size: 42px;
+  font-weight: 600;
+}
+
 .written-studio-info-container p {
   text-align: left;
 }
@@ -45,15 +50,14 @@
   padding: 5px;
 }
 
-
 .class-box p {
   padding: 0 10px;
   width: 25%;
 }
 
-.book-button{
+.book-button {
   margin: 0 10px;
-  width: 15%;
+  width: fit-content;
   padding: 5px;
 }
 
@@ -72,7 +76,7 @@
   padding: 5px;
 }
 
-.add-button{
+.add-button {
   padding: 5px;
   margin: 10px auto;
 }
@@ -83,11 +87,11 @@
     justify-content: center;
   }
 
-  .written-studio-info-container{
+  .written-studio-info-container {
     width: 90vw;
   }
 
-  .class-box{
+  .class-box {
     width: 95vw;
   }
 
@@ -95,7 +99,7 @@
     width: 20%;
   }
 
-  .delete-button{
+  .delete-button {
     width: fit-content;
     height: auto;
   }
