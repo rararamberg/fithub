@@ -37,6 +37,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 8px;
   color: white;
+  margin: 0;
 }
 
 .login-div a {
