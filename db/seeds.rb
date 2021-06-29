@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Studio.destroy_all
 FitClass.destroy_all
+Studio.destroy_all
 User.destroy_all
 
 @user_test = User.create!(username: 'LoonBug', email: 'looneytunes@email.com', first_name: 'Bugs', last_name: 'Bunny', password: '123456' )
