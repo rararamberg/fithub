@@ -53,5 +53,6 @@ img {
   .studio-box {
     flex-direction: column;
     justify-content: center;
+    padding: 10px 5px;
   }
 }
