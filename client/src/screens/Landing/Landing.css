@@ -10,6 +10,14 @@
   letter-spacing: 1px;
 }
 
+.landing-div h2 {
+  font-size: 76px;
+  padding: 10px 0;
+}
+.landing-div p {
+  font-size: 36px;
+}
+
 .build-schedule-div,
 .build-practice-div {
   margin: 45px 0;
