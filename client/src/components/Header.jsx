@@ -40,7 +40,7 @@ function Header(props) {
     }
   };
   return (
-    <div>
+    <div className="header-container">
       <header className="fithub-header">
         {currentUser ? (
           <h1>
