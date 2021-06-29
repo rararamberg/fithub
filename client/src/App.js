@@ -13,24 +13,20 @@ import Register from "./screens/Register/Register";
 import MainContainer from "./containers/MainContainer";
 import Landing from "./screens/Landing/Landing";
 
-
 function App() {
   // objects of data start as null
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
-  // may need eyes on this..
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
-      // use history here?
       if (!userData) {
         history.push("/");
       } else if (!userData.has_studio) {
-        history.push("/my-studio/create-studio")
-      }
-      else {
+        history.push("/my-studio/create-studio");
+      } else {
         history.push("/my-studio");
       }
     };
@@ -41,7 +37,7 @@ function App() {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
     if (!userData.has_studio) {
-      history.push("/my-studio/create-studio")
+      history.push("/my-studio/create-studio");
     } else {
       history.push("/my-studio");
     }

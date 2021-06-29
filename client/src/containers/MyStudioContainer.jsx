@@ -52,7 +52,7 @@ function MyStudioContainer(props) {
       ...prevState,
       fit_classes: [...prevState.fit_classes, classItem],
     }));
-    // push back to user's studio detail page???
+    // push back to user's studio detail page
     history.push("/my-studio");
   };
 
@@ -77,7 +77,6 @@ function MyStudioContainer(props) {
         (fitClass) => fitClass.id !== id
       ),
     }));
-    // history.push("/my-studio");
   };
 
   return (

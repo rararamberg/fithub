@@ -29686,3 +29686,199 @@ Processing by StudiosController#index as HTML
 Completed 200 OK in 111ms (Views: 109.5ms | ActiveRecord: 0.5ms | Allocations: 1227)
 
 
+Started GET "/studios" for ::1 at 2021-06-29 01:02:05 -0500
+  [1m[35m (18.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 69ms (Views: 17.2ms | ActiveRecord: 34.4ms | Allocations: 10890)
+
+
+Started GET "/studios" for ::1 at 2021-06-29 01:02:50 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 1248)
+
+
+Started GET "/studios" for ::1 at 2021-06-29 01:03:14 -0500
+Processing by StudiosController#index as HTML
+  [1m[36mStudio Load (1.9ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 1.9ms | Allocations: 1245)
+
+
+Started GET "/studios/1" for ::1 at 2021-06-29 01:03:16 -0500
+Processing by StudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudio Load (2.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:51:in `set_studio'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+  [1m[36mFitClass Load (1.2ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:14:in `show'
+Completed 200 OK in 160ms (Views: 81.5ms | ActiveRecord: 14.1ms | Allocations: 18704)
+
+
+Started POST "/auth/login" for ::1 at 2021-06-29 01:03:40 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"authentication"=>{"username"=>"LoonBug", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "LoonBug"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:8:in `login'
+  [1m[36mStudio Load (0.2ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:15:in `login'
+Completed 200 OK in 301ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2090)
+
+
+Started GET "/studios" for ::1 at 2021-06-29 01:03:40 -0500
+Processing by StudiosController#index as HTML
+Started GET "/users/studios" for ::1 at 2021-06-29 01:03:41 -0500
+Processing by StudiosController#user_studio as HTML
+  [1m[36mStudio Load (11.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  ↳ app/controllers/studios_controller.rb:9:in `index'
+Completed 200 OK in 63ms (Views: 51.5ms | ActiveRecord: 11.1ms | Allocations: 2425)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:44:in `user_studio'
+Completed 200 OK in 78ms (Views: 3.5ms | ActiveRecord: 15.2ms | Allocations: 6349)
+
+
+Started DELETE "/fit_classes/17" for ::1 at 2021-06-29 01:03:44 -0500
+Processing by FitClassesController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass::HABTM_Users Destroy (9.4ms)[0m  [1m[31mDELETE FROM "fit_classes_users" WHERE "fit_classes_users"."fit_class_id" = $1[0m  [["fit_class_id", 17]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass Destroy (2.8ms)[0m  [1m[31mDELETE FROM "fit_classes" WHERE "fit_classes"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+Completed 204 No Content in 50ms (ActiveRecord: 20.0ms | Allocations: 4375)
+
+
+Started DELETE "/fit_classes/18" for ::1 at 2021-06-29 01:03:45 -0500
+Processing by FitClassesController#destroy as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass::HABTM_Users Destroy (0.5ms)[0m  [1m[31mDELETE FROM "fit_classes_users" WHERE "fit_classes_users"."fit_class_id" = $1[0m  [["fit_class_id", 18]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass Destroy (0.4ms)[0m  [1m[31mDELETE FROM "fit_classes" WHERE "fit_classes"."id" = $1[0m  [["id", 18]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 2.9ms | Allocations: 2898)
+
+
+Started PUT "/fit_classes/1" for ::1 at 2021-06-29 01:04:12 -0500
+Processing by FitClassesController#update as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-24T09:45", "class_name"=>"Gym Jam"}, "id"=>"1"}
+  [1m[36mFitClass Load (0.4ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+Completed 200 OK in 23ms (Views: 1.2ms | ActiveRecord: 2.3ms | Allocations: 3872)
+
+
+Started PUT "/studios/1" for ::1 at 2021-06-29 01:04:23 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"weight-lifting"}, "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (1.7ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "weight-lifting"], ["updated_at", "2021-06-29 06:04:23.982174"], ["id", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:35:in `update'
+Completed 200 OK in 17ms (Views: 4.3ms | ActiveRecord: 3.6ms | Allocations: 4503)
+
+
+Started PUT "/studios/1" for ::1 at 2021-06-29 01:04:30 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mStudio Update (0.4ms)[0m  [1m[33mUPDATE "studios" SET "format" = $1, "updated_at" = $2 WHERE "studios"."id" = $3[0m  [["format", "cardio"], ["updated_at", "2021-06-29 06:04:30.670056"], ["id", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:35:in `update'
+Completed 200 OK in 32ms (Views: 4.4ms | ActiveRecord: 2.0ms | Allocations: 4265)
+
+
+Started PUT "/studios/1" for ::1 at 2021-06-29 01:05:34 -0500
+Processing by StudiosController#update as HTML
+  Parameters: {"studio"=>{"business_name"=>"SpaceGym", "location"=>"Outerspace", "blurb"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "image_url"=>"https://static1.colliderimages.com/wordpress/wp-content/uploads/2021/03/space-jam-2-character-poster-bugs-bunny-social-featured.jpg?q=50&fit=contain&w=943&h=472&dpr=1.5", "format"=>"cardio"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/studios_controller.rb:34:in `update'
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."studio_id" = $1[0m  [["studio_id", 1]]
+  ↳ app/controllers/studios_controller.rb:35:in `update'
+Completed 200 OK in 106ms (Views: 43.5ms | ActiveRecord: 1.0ms | Allocations: 2773)
+
+
+Started POST "/fit_classes" for ::1 at 2021-06-29 01:05:51 -0500
+Processing by FitClassesController#create as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-29T01:05", "class_name"=>"Yin"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mStudio Load (0.3ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mFitClass Create (3.2ms)[0m  [1m[32mINSERT INTO "fit_classes" ("class_name", "schedule_time", "studio_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["class_name", "Yin"], ["schedule_time", "2021-06-29 01:05:00"], ["studio_id", 1], ["created_at", "2021-06-29 06:05:51.237638"], ["updated_at", "2021-06-29 06:05:51.237638"]]
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:11:in `create'
+Completed 201 Created in 16ms (Views: 0.6ms | ActiveRecord: 4.7ms | Allocations: 3289)
+
+
+Started DELETE "/fit_classes/19" for ::1 at 2021-06-29 01:05:53 -0500
+Processing by FitClassesController#destroy as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mFitClass Load (0.3ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass::HABTM_Users Destroy (0.3ms)[0m  [1m[31mDELETE FROM "fit_classes_users" WHERE "fit_classes_users"."fit_class_id" = $1[0m  [["fit_class_id", 19]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mFitClass Destroy (0.3ms)[0m  [1m[31mDELETE FROM "fit_classes" WHERE "fit_classes"."id" = $1[0m  [["id", 19]]
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:29:in `destroy'
+Completed 204 No Content in 11ms (ActiveRecord: 2.2ms | Allocations: 2894)
+
+
