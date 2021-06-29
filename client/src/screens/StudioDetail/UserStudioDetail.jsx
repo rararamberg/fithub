@@ -47,7 +47,7 @@ function UserStudioDetail(props) {
           </div>
         ))}
         <Link to="/my-studio/create-class">
-          <Button className="add-button">Add Class</Button>
+          <Button id="add-button">Add Class</Button>
         </Link>
       </div>
     </div>

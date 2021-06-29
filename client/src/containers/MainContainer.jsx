@@ -13,7 +13,6 @@ function MainContainer(props) {
   useEffect(() => {
     const fetchStudios = async () => {
       const studioList = await getAllStudios();
-      console.log(studioList);
       setStudios(studioList);
     };
     fetchStudios();

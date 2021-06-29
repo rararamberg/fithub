@@ -9,12 +9,20 @@
   align-content: space-between;
   width: 65vw;
   height: fit-content;
+  box-shadow: 1px 2px #c4c4c4;
+  background-image: url("https://images.unsplash.com/photo-1549576490-b0b4831ef60a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center;
 }
 
 .register-div h2 {
   padding: 5px 20px;
   margin: 10px 25px;
   border: 1px solid black;
+  box-shadow: 1px 1px #c4c4c4;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 8px;
 }
 
 .register-div label {
@@ -23,8 +31,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
 }
 
+.register-div p {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  color: white;
+  margin: 0;
+}
 
 .register-div input,
 .register-div button {
@@ -32,7 +47,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
   .register-div {
     width: 95vw;
   }

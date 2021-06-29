@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './StudioCreateEdit.css'
-import Button from 'react-bootstrap/Button';
+import "./StudioCreateEdit.css";
+import Button from "react-bootstrap/Button";
 
 function UserStudioEdit(props) {
   const { userStudio, handleUpdateStudio } = props;
@@ -44,7 +44,7 @@ function UserStudioEdit(props) {
     }));
   };
   return (
-    <div className='studio-create-edit-div'>
+    <div className="studio-create-edit-div">
       <h2>Make some changes.</h2>
       <form
         onSubmit={(e) => {
@@ -53,21 +53,21 @@ function UserStudioEdit(props) {
         }}
       >
         <div className="input-div">
-        <input
-          type="text"
-          placeholder="Studio Name"
-          name="business_name"
-          value={business_name}
-          onChange={handleChange}
-        />
-        
-        <input
-          type="text"
-          placeholder="Where are you located?"
-          name="location"
-          value={location}
-          onChange={handleChange}
-        />
+          <input
+            type="text"
+            placeholder="Studio Name"
+            name="business_name"
+            value={business_name}
+            onChange={handleChange}
+          />
+
+          <input
+            type="text"
+            placeholder="Where are you located?"
+            name="location"
+            value={location}
+            onChange={handleChange}
+          />
         </div>
         <div className="input-div">
           <textarea
@@ -77,7 +77,7 @@ function UserStudioEdit(props) {
             value={blurb}
             onChange={handleChange}
           />
-          
+
           <input
             type="text"
             placeholder="Insert image URL here"
@@ -86,7 +86,7 @@ function UserStudioEdit(props) {
             onChange={handleChange}
           />
         </div>
-        
+
         <label>Format:</label>
         <div className="checkbox-container">
           <div className="checkbox-div">
@@ -125,7 +125,9 @@ function UserStudioEdit(props) {
         </div>
 
         {/* once submitted direct user to their studio's detail page */}
-        <Button type='submit'>SAVE!</Button>
+        <Button id="save-button" type="submit">
+          SAVE!
+        </Button>
       </form>
     </div>
   );

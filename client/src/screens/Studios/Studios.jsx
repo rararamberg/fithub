@@ -10,43 +10,46 @@ function Studios(props) {
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    setSearchResult(studios)
+    setSearchResult(studios);
   }, [studios]);
-  
+
   const handleFilter = (type) => {
-    const results = studios.filter((studio) =>
-      studio.format.includes(type)
-    );
+    const results = studios.filter((studio) => studio.format.includes(type));
     setSearchResult(results);
   };
-  
+
   const handleSearch = (event) => {
     const results = studios.filter((studio) =>
-      studio.business_name.toLowerCase().includes(event.target.value.toLowerCase())
+      studio.business_name
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase())
     );
     setSearchResult(results);
-    // setApplySort(true);
   };
   return (
     <div className="all-studios-div">
       <div className="filter-components-container">
-        <FilterBy handleFilter={handleFilter} setSearchResult={setSearchResult} studios={studios}/>
-        <Search handleSearch={handleSearch}/>
+        <FilterBy
+          handleFilter={handleFilter}
+          setSearchResult={setSearchResult}
+          studios={studios}
+        />
+        <Search handleSearch={handleSearch} />
       </div>
       {searchResult.map((studio) => (
         <div className="studio-box" key={studio.id}>
           <div className="studio-image">
             <img src={studio.image_url} alt={studio.business_name} />
           </div>
-          <div className="short-studio-info">
-            <Link to={`/studios/${studio.id}`}>
+          <Link to={`/studios/${studio.id}`}>
+            <div className="short-studio-info">
               <h3>{studio.business_name}</h3>
-            </Link>
-            <p>
-              <em>{studio.location}</em>
-            </p>
-            <p>{studio.blurb}</p>
-          </div>
+              <p>
+                <em>{studio.location}</em>
+              </p>
+              <p>{studio.blurb}</p>
+            </div>
+          </Link>
         </div>
       ))}
     </div>
