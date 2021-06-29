@@ -1,0 +1,42 @@
+.register-div {
+  margin: 20px auto;
+  padding: 10px 0;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
+  width: 65vw;
+  height: fit-content;
+}
+
+.register-div h2 {
+  padding: 5px 20px;
+  margin: 10px 25px;
+  border: 1px solid black;
+}
+
+.register-div label {
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.register-div input,
+.register-div button {
+  margin: 10px 10px;
+}
+
+@media screen and (max-width: 600px) {
+
+  .register-div {
+    width: 95vw;
+  }
+  .register-div label {
+    justify-content: space-between;
+  }
+}

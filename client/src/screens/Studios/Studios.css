@@ -21,3 +21,15 @@ img {
   width: 300px;
   height: auto;
 }
+
+@media screen and (max-width: 600px) {
+  .all-studios-div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .studio-box {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

@@ -13,15 +13,26 @@ import Register from "./screens/Register/Register";
 import MainContainer from "./containers/MainContainer";
 import Landing from "./screens/Landing/Landing";
 
+
 function App() {
   // objects of data start as null
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  // may need eyes on this..
   useEffect(() => {
     const handleVerify = async () => {
       const userData = await verifyUser();
       setCurrentUser(userData);
+      // use history here?
+      if (!userData) {
+        history.push("/");
+      } else if (!userData.has_studio) {
+        history.push("/my-studio/create-studio")
+      }
+      else {
+        history.push("/my-studio");
+      }
     };
     handleVerify();
   }, []);
@@ -29,12 +40,16 @@ function App() {
   const handleLogin = async (formData) => {
     const userData = await loginUser(formData);
     setCurrentUser(userData);
-    history.push("/my-studio");
+    if (!userData.has_studio) {
+      history.push("/my-studio/create-studio")
+    } else {
+      history.push("/my-studio");
+    }
   };
   const handleRegister = async (formData) => {
     const userData = await registerUser(formData);
     setCurrentUser(userData);
-    history.push("/create-update-studio");
+    history.push("/my-studio/create-studio");
   };
 
   const handleLogout = () => {
