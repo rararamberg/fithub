@@ -29493,3 +29493,19 @@ Processing by StudiosController#show as HTML
 Completed 200 OK in 40ms (Views: 8.7ms | ActiveRecord: 17.2ms | Allocations: 2570)
 
 
+Started GET "/auth/verify" for ::1 at 2021-06-28 22:21:56 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 100ms (Views: 3.7ms | ActiveRecord: 31.1ms | Allocations: 2774)
+
+
+Started GET "/auth/verify" for ::1 at 2021-06-28 22:26:05 -0500
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 18ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 663)
+
+

@@ -15,12 +15,22 @@
   width: fit-content;
   color: #634491;
   text-shadow: 1px 1px #cfcfcf;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
   font-size: 56px;
 }
 
 .fithub-header span {
-  color: #8C2A82;
+  color: #8c2a82;
+}
+
+#sign-in {
+  color: #634491;
+  border-color: #634491;
+}
+
+#sign-in:hover {
+  color: #fff;
+  background-color: #634491;
 }
 
 nav {
