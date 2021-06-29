@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DateTime } from "luxon";
-import Button from 'react-bootstrap/Button';
-import './ClassEdit.css'
+import Button from "react-bootstrap/Button";
+import "./ClassEdit.css";
 
 function ClassEdit(props) {
   const [formData, setFormData] = useState({
@@ -20,7 +20,9 @@ function ClassEdit(props) {
         (fitclass) => fitclass.id === Number(id)
       );
       setFormData({
-        schedule_time: DateTime.fromISO(singleClass.schedule_time, {zone: 'utc'}).toFormat("yyyy-MM-dd'T'hh:mm"),
+        schedule_time: DateTime.fromISO(singleClass.schedule_time, {
+          zone: "utc",
+        }).toFormat("yyyy-MM-dd'T'hh:mm"),
         class_name: singleClass.class_name,
       });
     };
@@ -47,21 +49,23 @@ function ClassEdit(props) {
       >
         {/* where user can update time and class name shown */}
         <div className="input-container">
-        <input
-          type="datetime-local"
-          name="schedule_time"
-          defaultValue={schedule_time}
-          value={schedule_time}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="class_name"
-          value={class_name}
-          onChange={handleChange}
-        />
+          <input
+            type="datetime-local"
+            name="schedule_time"
+            defaultValue={schedule_time}
+            value={schedule_time}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="class_name"
+            value={class_name}
+            onChange={handleChange}
+          />
         </div>
-        <Button type='submit'>Save Changes</Button>
+        <Button id="save-change-button" type="submit">
+          Save Changes
+        </Button>
       </form>
     </div>
   );

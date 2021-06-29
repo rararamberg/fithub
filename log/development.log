@@ -29575,3 +29575,19 @@ Completed 200 OK in 126ms (Views: 6.6ms | ActiveRecord: 2.0ms | Allocations: 347
 Completed 200 OK in 154ms (Views: 140.3ms | ActiveRecord: 13.0ms | Allocations: 5973)
 
 
+Started PUT "/fit_classes/1" for ::1 at 2021-06-29 00:33:04 -0500
+Processing by FitClassesController#update as HTML
+  Parameters: {"fit_class"=>{"schedule_time"=>"2021-06-24T09:45", "class_name"=>"Gym Jam"}, "id"=>"1"}
+  [1m[36mFitClass Load (5.5ms)[0m  [1m[34mSELECT "fit_classes".* FROM "fit_classes" WHERE "fit_classes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:35:in `set_fit_class'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `authorize_request'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" WHERE "studios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/fit_classes_controller.rb:20:in `update'
+Completed 200 OK in 131ms (Views: 1.0ms | ActiveRecord: 25.9ms | Allocations: 6230)
+
+
